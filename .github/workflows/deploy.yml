@@ -53,9 +53,6 @@ jobs:
         run: |
           set -euo pipefail
           ssh "${DEPLOY_USER}@${DEPLOY_HOST}" '
-            sudo mkdir -p "'"${DEPLOY_PATH}"'" &&
-            sudo rsync -av --delete /tmp/tfa-site/ "'"${DEPLOY_PATH}"'/" &&
-            sudo chown -R www-data:www-data "'"${DEPLOY_PATH}"'" &&
-            sudo nginx -t &&
-            sudo systemctl reload nginx
+            mkdir -p "'"${DEPLOY_PATH}"'" &&
+            rsync -av --delete /tmp/tfa-site/ "'"${DEPLOY_PATH}"'/"
           '
