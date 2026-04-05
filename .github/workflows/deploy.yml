@@ -28,8 +28,15 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p ~/.ssh
-          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
+          KEY_CONTENT="${{ secrets.SSH_PRIVATE_KEY }}"
+          if [[ "${KEY_CONTENT}" == *"BEGIN OPENSSH PRIVATE KEY"* ]]; then
+            printf '%s\n' "${KEY_CONTENT}" | tr -d '\r' > ~/.ssh/id_ed25519
+          else
+            # Optional fallback: allow base64-encoded private key in secret.
+            printf '%s' "${KEY_CONTENT}" | tr -d '\r' | base64 -d > ~/.ssh/id_ed25519
+          fi
           chmod 600 ~/.ssh/id_ed25519
+          ssh-keygen -y -f ~/.ssh/id_ed25519 >/dev/null
           ssh-keyscan -H "${DEPLOY_HOST}" >> ~/.ssh/known_hosts
 
       - name: Upload site to temporary directory
