@@ -8,30 +8,47 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup SSH
+      - name: Validate required secrets
         run: |
+          test -n "${{ secrets.SSH_PRIVATE_KEY }}" || (echo "Missing secret: SSH_PRIVATE_KEY" && exit 1)
+          test -n "${DEPLOY_HOST}" || (echo "Missing secret: DEPLOY_HOST" && exit 1)
+          test -n "${DEPLOY_USER}" || (echo "Missing secret: DEPLOY_USER" && exit 1)
+          test -n "${DEPLOY_PATH}" || (echo "Missing secret: DEPLOY_PATH" && exit 1)
+
+      - name: Setup SSH
+        shell: bash
+        run: |
+          set -euo pipefail
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -H "${{ secrets.DEPLOY_HOST }}" >> ~/.ssh/known_hosts
+          ssh-keyscan -H "${DEPLOY_HOST}" >> ~/.ssh/known_hosts
 
       - name: Upload site to temporary directory
+        shell: bash
         run: |
+          set -euo pipefail
           rsync -avz --delete \
             --exclude ".git/" \
             --exclude ".github/" \
-            ./ "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}:/tmp/tfa-site/"
+            ./ "${DEPLOY_USER}@${DEPLOY_HOST}:/tmp/tfa-site/"
 
       - name: Publish site on server
+        shell: bash
         run: |
-          ssh "${{ secrets.DEPLOY_USER }}@${{ secrets.DEPLOY_HOST }}" '
-            sudo mkdir -p "${{ secrets.DEPLOY_PATH }}" &&
-            sudo rsync -av --delete /tmp/tfa-site/ "${{ secrets.DEPLOY_PATH }}/" &&
-            sudo chown -R www-data:www-data "${{ secrets.DEPLOY_PATH }}" &&
+          set -euo pipefail
+          ssh "${DEPLOY_USER}@${DEPLOY_HOST}" '
+            sudo mkdir -p "'"${DEPLOY_PATH}"'" &&
+            sudo rsync -av --delete /tmp/tfa-site/ "'"${DEPLOY_PATH}"'/" &&
+            sudo chown -R www-data:www-data "'"${DEPLOY_PATH}"'" &&
             sudo nginx -t &&
             sudo systemctl reload nginx
           '
