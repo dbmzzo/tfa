@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TFA Appeals Form</title>
+  <meta name="description" content="Submit a trivia appeal to the Trivia Fairness Association.">
+  <meta property="og:title" content="TFA Appeals Form">
+  <meta property="og:description" content="Submit a trivia appeal to the Trivia Fairness Association.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://t-f-a-trivia-fairnes-associationcom.tv/application.html">
+  <meta property="og:image" content="https://t-f-a-trivia-fairnes-associationcom.tv/assets/images/logo.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">Trivia Fairness Association</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="faq.html">FAQ</a>
+        <a href="governance.html">Governance</a>
+        <a href="investigations.html">Investigations</a>
+        <a href="history.html">History</a>
+        <a href="application.html" aria-current="page">Submit an Appeal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <h1>TFA Appeals Form</h1>
+      <p class="lead">Use this form to submit disputes related to scoring, question quality, conduct, or other competition fairness issues.</p>
+    </section>
+
+    <section class="section">
+      <article class="card form-shell">
+        <form id="appeals-form" class="custom-form" action="https://docs.google.com/forms/d/e/1FAIpQLSdQs1ZhCBCXuwxAitovdAJWprZbWh8Vzy7O3aTmr8Dam6_ZLQ/formResponse" method="post" novalidate>
+          <div class="form-grid two-col">
+            <label>
+              Full Name
+              <input type="text" name="entry.1274293905" required>
+            </label>
+            <label>
+              Contact Email
+              <input type="email" name="entry.645292504" required>
+            </label>
+          </div>
+
+          <div class="form-grid two-col">
+            <label>
+              Preferred Pronouns
+              <input type="text" name="entry.2017318035" required>
+            </label>
+            <label>
+              Team Name
+              <input type="text" name="entry.218113637" required>
+            </label>
+          </div>
+
+          <div class="form-grid two-col">
+            <label>
+              When Was The Trivia?
+              <input type="date" name="entry.344281731" required>
+            </label>
+            <label>
+              Venue
+              <input type="text" name="entry.129672756" required>
+            </label>
+          </div>
+
+          <div class="form-grid two-col">
+            <label>
+              Trivia Host Name
+              <input type="text" name="entry.1265856105" required>
+            </label>
+            <label>
+              Trivia Host TFA ID Number (if known)
+              <input type="text" name="entry.483027721">
+            </label>
+          </div>
+
+          <fieldset class="choices-block">
+            <legend>Topic(s) Of Appeal</legend>
+            <p class="small">Select all that apply.</p>
+            <label class="choice-item"><input type="checkbox" name="entry.134922146" value="Ambiguous or Poorly Worded Question"> Ambiguous or Poorly Worded Question</label>
+            <label class="choice-item"><input type="checkbox" name="entry.134922146" value="Scoring Error"> Scoring Error</label>
+            <label class="choice-item"><input type="checkbox" name="entry.134922146" value="Rule Violation (e.g., table talk, phone usage)"> Rule Violation (e.g., table talk, phone usage)</label>
+            <label class="choice-item"><input type="checkbox" name="entry.134922146" value="Answers not provided or inaccurate"> Answers not provided or inaccurate</label>
+            <label class="choice-item"><input type="checkbox" name="entry.134922146" value="Acceptance of poor spellling (type-in only) Example: No Dought"> Acceptance of poor spelling (type-in only) Example: No Dought</label>
+            <label class="choice-item"><input type="checkbox" name="entry.134922146" value="Category description misleading or unclear"> Category description misleading or unclear</label>
+          </fieldset>
+
+          <fieldset class="choices-block">
+            <legend>Would You Like To Be Informed Of The TFA Findings?</legend>
+            <label class="choice-item"><input type="radio" name="entry.1095010159" value="Yes" required> Yes</label>
+            <label class="choice-item"><input type="radio" name="entry.1095010159" value="No" required> No</label>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit" class="form-launch">Submit Appeal</button>
+          </div>
+          <p id="form-status" class="small" aria-live="polite"></p>
+        </form>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner"><p><strong>TFA</strong> | Appeals and Review Intake</p></div>
+  </footer>
+
+  <script>
+    (function () {
+      var form = document.getElementById("appeals-form");
+      var statusEl = document.getElementById("form-status");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        var checkedTopics = form.querySelectorAll('input[name="entry.134922146"]:checked').length;
+        if (checkedTopics === 0) {
+          statusEl.textContent = "Please select at least one appeal topic.";
+          return;
+        }
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        statusEl.textContent = "Submitting appeal...";
+
+        var data = new FormData(form);
+        fetch(form.action, {
+          method: "POST",
+          mode: "no-cors",
+          body: data
+        }).then(function () {
+          statusEl.textContent = "Appeal submitted. Thank you. The TFA will review your submission.";
+          form.reset();
+        }).catch(function () {
+          statusEl.textContent = "Submission failed. Please use the 'Open Original Google Form' link.";
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
