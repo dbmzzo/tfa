@@ -385,8 +385,45 @@ h3 {
   margin-bottom: 0.85rem;
 }
 
+.appeals-brief > * {
+  margin: 0;
+}
+
+.appeals-brief > * + * {
+  margin-top: 0.72rem;
+}
+
+.appeals-brief h2 {
+  margin-bottom: 0.08rem;
+}
+
 .appeals-brief h3 {
-  margin: 0.95rem 0 0.35rem;
+  margin-top: 0.95rem;
+}
+
+.appeals-brief h3 + * {
+  margin-top: 0.42rem;
+}
+
+.appeals-brief .list-clean + h3 {
+  margin-top: 1rem;
+}
+
+.appeals-brief p {
+  line-height: 1.42;
+}
+
+.appeals-brief .list-clean {
+  padding-left: 1.1rem;
+}
+
+.appeals-brief .list-clean li {
+  margin: 0;
+  line-height: 1.32;
+}
+
+.appeals-brief .list-clean li + li {
+  margin-top: 0.22rem;
 }
 
 .form-launch {
