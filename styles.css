@@ -554,6 +554,26 @@ h3 {
   font-weight: 700;
 }
 
+.kidz-answer-toggle {
+  display: inline-block;
+  margin: 0.15rem 0 0.45rem;
+  padding: 0.38rem 0.65rem;
+  border-top: 2px solid #fff7b2;
+  border-left: 2px solid #fff7b2;
+  border-right: 2px solid #ff4aa9;
+  border-bottom: 2px solid #ff4aa9;
+  background: linear-gradient(180deg, #ffe95f 0%, #ff8fd1 100%);
+  color: #2f6dff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.kidz-answer-toggle:hover,
+.kidz-answer-toggle[aria-expanded="true"] {
+  background: linear-gradient(180deg, #ff83cb 0%, #ffe95f 100%);
+}
+
 .kidz-highlight {
   background: linear-gradient(180deg, rgba(255, 236, 79, 0.98), rgba(255, 112, 196, 0.95));
 }

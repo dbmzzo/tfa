@@ -110,32 +110,38 @@
           <div class="kidz-question">
             <p class="kidz-question-label">Question 1</p>
             <h3>What planet do we live on?</h3>
-            <p class="small kidz-answer">Answer: Earth</p>
+            <button class="kidz-answer-toggle" type="button" aria-expanded="false">Show me the answer</button>
+            <p class="small kidz-answer" hidden>Answer: Earth</p>
           </div>
           <div class="kidz-question">
             <p class="kidz-question-label">Question 2</p>
             <h3>How many legs does a spider have?</h3>
-            <p class="small kidz-answer">Answer: Eight</p>
+            <button class="kidz-answer-toggle" type="button" aria-expanded="false">Show me the answer</button>
+            <p class="small kidz-answer" hidden>Answer: Eight</p>
           </div>
           <div class="kidz-question">
             <p class="kidz-question-label">Question 3</p>
             <h3>Which ocean animal is known for having eight arms?</h3>
-            <p class="small kidz-answer">Answer: An octopus</p>
+            <button class="kidz-answer-toggle" type="button" aria-expanded="false">Show me the answer</button>
+            <p class="small kidz-answer" hidden>Answer: An octopus</p>
           </div>
           <div class="kidz-question">
             <p class="kidz-question-label">Question 4</p>
             <h3>What do caterpillars turn into?</h3>
-            <p class="small kidz-answer">Answer: Butterflies</p>
+            <button class="kidz-answer-toggle" type="button" aria-expanded="false">Show me the answer</button>
+            <p class="small kidz-answer" hidden>Answer: Butterflies</p>
           </div>
           <div class="kidz-question">
             <p class="kidz-question-label">Question 5</p>
             <h3>Which shape has three sides?</h3>
-            <p class="small kidz-answer">Answer: A triangle</p>
+            <button class="kidz-answer-toggle" type="button" aria-expanded="false">Show me the answer</button>
+            <p class="small kidz-answer" hidden>Answer: A triangle</p>
           </div>
           <div class="kidz-question">
             <p class="kidz-question-label">Question 6</p>
             <h3>What star lights up the daytime sky?</h3>
-            <p class="small kidz-answer">Answer: The Sun</p>
+            <button class="kidz-answer-toggle" type="button" aria-expanded="false">Show me the answer</button>
+            <p class="small kidz-answer" hidden>Answer: The Sun</p>
           </div>
         </div>
       </article>
@@ -178,5 +184,22 @@
       <p><strong>TFA for KIDZ!</strong> | Bright questions. Fair answers. Big imaginations.</p>
     </div>
   </footer>
+
+  <script>
+    (function () {
+      var toggles = document.querySelectorAll(".kidz-answer-toggle");
+
+      toggles.forEach(function (toggle) {
+        toggle.addEventListener("click", function () {
+          var answer = toggle.nextElementSibling;
+          var isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+          toggle.setAttribute("aria-expanded", isOpen ? "false" : "true");
+          toggle.textContent = isOpen ? "Show me the answer" : "Hide the answer";
+          answer.hidden = isOpen;
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
