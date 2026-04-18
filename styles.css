@@ -309,6 +309,7 @@ h3 {
 
 .chapter-history-figure .history-figure {
   margin-bottom: 0.45rem;
+  max-width: 260px;
 }
 
 .chapter-history-copy > *:last-child,
