@@ -488,6 +488,29 @@ h3 {
   background: linear-gradient(180deg, rgba(255, 229, 95, 0.98), rgba(255, 154, 216, 0.95));
 }
 
+.kidz-mascot-layout {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
+}
+
+.kidz-mascot-figure {
+  margin: 0;
+}
+
+.kidz-mascot-figure img {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  border-top: 3px solid #fff8b8;
+  border-left: 3px solid #fff8b8;
+  border-right: 3px solid #ff4aa9;
+  border-bottom: 3px solid #ff4aa9;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
 .kidz-mascot-copy h2 {
   color: #ff2f92;
 }
@@ -924,6 +947,14 @@ h3 {
 
   .kidz-hero-inner {
     grid-template-columns: 1fr;
+  }
+
+  .kidz-mascot-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .kidz-mascot-figure img {
+    margin: 0 auto;
   }
 
   .hero-image-panel img {
