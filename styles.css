@@ -501,14 +501,15 @@ h3 {
 
 .kidz-mascot-figure img {
   display: block;
-  width: 100%;
-  max-width: 140px;
+  width: 70px;
+  height: 75px;
   border-top: 3px solid #fff8b8;
   border-left: 3px solid #fff8b8;
   border-right: 3px solid #ff4aa9;
   border-bottom: 3px solid #ff4aa9;
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.2);
+  object-fit: cover;
 }
 
 .kidz-mascot-copy h2 {
