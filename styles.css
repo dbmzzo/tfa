@@ -330,6 +330,118 @@ h3 {
   padding-left: 0.8rem;
 }
 
+.kidz-page {
+  position: relative;
+}
+
+.kidz-hero {
+  background:
+    radial-gradient(circle at top left, rgba(255, 237, 87, 0.34), transparent 32%),
+    radial-gradient(circle at top right, rgba(255, 80, 180, 0.28), transparent 34%),
+    linear-gradient(180deg, #ff4ba3 0%, #ff9d1e 52%, #ffe84a 100%);
+}
+
+.kidz-hero::before {
+  background:
+    linear-gradient(to bottom, rgba(120, 0, 68, 0.18), rgba(110, 38, 0, 0.22)),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.18), transparent 42%);
+}
+
+.kidz-hero::after {
+  background:
+    radial-gradient(circle, rgba(255, 255, 255, 0.22) 0 2px, transparent 3px),
+    radial-gradient(circle, rgba(255, 230, 73, 0.32) 0 3px, transparent 4px);
+  background-size: 44px 44px, 72px 72px;
+  background-position: 0 0, 16px 14px;
+  opacity: 0.45;
+}
+
+.kidz-hero-inner {
+  display: grid;
+  grid-template-columns: 1.5fr 0.9fr;
+  gap: 0.8rem;
+  align-items: stretch;
+}
+
+.kidz-hero-card,
+.kidz-badge-card,
+.kidz-card {
+  color: #4d1034;
+  border-top: 3px solid #fff7b0;
+  border-left: 3px solid #fff7b0;
+  border-right: 3px solid #a33964;
+  border-bottom: 3px solid #a33964;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+}
+
+.kidz-hero-card {
+  background: linear-gradient(180deg, rgba(255, 247, 176, 0.96), rgba(255, 220, 97, 0.96));
+}
+
+.kidz-badge-card {
+  background: linear-gradient(180deg, rgba(255, 153, 211, 0.96), rgba(255, 212, 82, 0.96));
+  display: grid;
+  align-content: center;
+  text-align: center;
+}
+
+.kidz-card {
+  background: linear-gradient(180deg, rgba(255, 244, 143, 0.95), rgba(255, 183, 219, 0.93));
+}
+
+.kidz-kicker,
+.kidz-card h2,
+.kidz-badge-card h2,
+.kidz-chip h3 {
+  color: #ff2f92;
+  text-shadow: none;
+}
+
+.kidz-lead {
+  color: #6b1639;
+  font-weight: 700;
+}
+
+.kidz-statement {
+  color: #fff;
+  background: rgba(255, 47, 146, 0.82);
+  border: 2px dashed rgba(255, 245, 166, 0.95);
+}
+
+.kidz-big-line {
+  margin: 0.25rem 0;
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: clamp(1.1rem, 2.4vw, 1.6rem);
+  text-transform: uppercase;
+  color: #7a103f;
+}
+
+.kidz-grid {
+  align-items: stretch;
+}
+
+.kidz-chip {
+  background: rgba(255, 255, 255, 0.34);
+  border: 2px dashed rgba(255, 47, 146, 0.7);
+  padding: 0.7rem;
+}
+
+.kidz-highlight {
+  background: linear-gradient(180deg, rgba(255, 233, 78, 0.98), rgba(255, 112, 188, 0.95));
+}
+
+.kidz-quote {
+  border-left-color: #ff2f92;
+  background: rgba(255, 255, 255, 0.25);
+  color: #5e1132;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.kidz-footer {
+  background: linear-gradient(180deg, rgba(255, 78, 163, 0.36), rgba(255, 222, 66, 0.3));
+}
+
 .actions-panel {
   background: linear-gradient(180deg, rgba(44, 27, 17, 0.92), rgba(20, 12, 8, 0.92));
 }
@@ -700,6 +812,10 @@ h3 {
   }
 
   .chapter-history-intro {
+    grid-template-columns: 1fr;
+  }
+
+  .kidz-hero-inner {
     grid-template-columns: 1fr;
   }
 
