@@ -486,7 +486,7 @@ h3 {
 
 .kidz-mascot-layout {
   display: grid;
-  grid-template-columns: minmax(180px, 260px) minmax(0, 1fr);
+  grid-template-columns: 120px minmax(0, 1fr);
   gap: 1rem;
   align-items: center;
 }
@@ -494,12 +494,13 @@ h3 {
 .kidz-mascot-figure {
   margin: 0;
   text-align: center;
+  width: 120px;
 }
 
 .kidz-mascot-figure img {
   display: block;
-  width: 72px;
-  max-width: 72px;
+  width: 84px;
+  max-width: 84px;
   margin: 0 auto;
   border-top: 3px solid #fff8b8;
   border-left: 3px solid #fff8b8;
