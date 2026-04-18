@@ -301,15 +301,15 @@ h3 {
 
 .chapter-history-figure .history-figure {
   margin-bottom: 0.45rem;
-  width: 220px;
-  height: 300px;
+  width: 440px;
+  height: 600px;
   max-width: none;
   object-fit: cover;
 }
 
 .chapter-history-figure-left {
   float: left;
-  width: 260px;
+  width: 480px;
   margin: 0.2rem 0.9rem 0.55rem 0;
 }
 
@@ -501,8 +501,8 @@ h3 {
 
 .kidz-mascot-figure img {
   display: block;
-  width: 70px;
-  height: 75px;
+  width: 210px;
+  height: 225px;
   border-top: 3px solid #fff8b8;
   border-left: 3px solid #fff8b8;
   border-right: 3px solid #ff4aa9;
