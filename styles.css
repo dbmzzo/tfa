@@ -274,6 +274,27 @@ h3 {
   background: linear-gradient(180deg, rgba(50, 31, 20, 0.92), rgba(23, 14, 9, 0.92));
 }
 
+.chapter-hero-card {
+  background: linear-gradient(180deg, rgba(50, 31, 20, 0.95), rgba(22, 13, 9, 0.95));
+}
+
+.chapter-grid {
+  align-items: stretch;
+}
+
+.chapter-block {
+  border-top: 2px solid rgba(214, 185, 139, 0.85);
+  border-left: 2px solid rgba(214, 185, 139, 0.85);
+  border-right: 2px solid rgba(42, 22, 14, 0.9);
+  border-bottom: 2px solid rgba(42, 22, 14, 0.9);
+  background: linear-gradient(180deg, rgba(58, 36, 23, 0.72), rgba(28, 17, 11, 0.72));
+  padding: 0.7rem;
+}
+
+.chapter-block p {
+  margin-bottom: 0;
+}
+
 .actions-panel {
   background: linear-gradient(180deg, rgba(44, 27, 17, 0.92), rgba(20, 12, 8, 0.92));
 }
