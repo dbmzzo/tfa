@@ -371,10 +371,10 @@ h3 {
 
 .kidz-hero {
   background:
-    radial-gradient(circle at top left, rgba(255, 241, 120, 0.45), transparent 28%),
-    radial-gradient(circle at top right, rgba(255, 61, 165, 0.38), transparent 30%),
-    radial-gradient(circle at 50% 70%, rgba(68, 202, 255, 0.28), transparent 30%),
-    linear-gradient(135deg, #ff2d97 0%, #ff6fbe 24%, #37c6ff 58%, #fff04d 100%);
+    radial-gradient(circle at top left, rgba(255, 245, 132, 0.42), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 113, 201, 0.32), transparent 30%),
+    radial-gradient(circle at 50% 70%, rgba(255, 255, 255, 0.16), transparent 32%),
+    linear-gradient(135deg, #ff4aac 0%, #ff79c8 45%, #ffe85b 100%);
 }
 
 .kidz-hero::before {
@@ -413,12 +413,12 @@ h3 {
 
 .kidz-hero-card {
   background:
-    linear-gradient(180deg, rgba(255, 247, 176, 0.97), rgba(255, 223, 83, 0.97));
+    linear-gradient(180deg, rgba(255, 236, 108, 0.97), rgba(255, 184, 222, 0.95));
 }
 
 .kidz-badge-card {
   background:
-    linear-gradient(180deg, rgba(70, 201, 255, 0.96), rgba(255, 121, 203, 0.95) 54%, rgba(255, 231, 85, 0.96));
+    linear-gradient(180deg, rgba(255, 101, 188, 0.96), rgba(255, 228, 96, 0.96));
   display: grid;
   align-content: center;
   text-align: center;
@@ -426,7 +426,7 @@ h3 {
 
 .kidz-card {
   background:
-    linear-gradient(180deg, rgba(255, 244, 143, 0.96), rgba(126, 225, 255, 0.9) 55%, rgba(255, 166, 217, 0.93));
+    linear-gradient(180deg, rgba(255, 237, 111, 0.97), rgba(255, 173, 220, 0.94));
 }
 
 .kidz-kicker,
@@ -437,14 +437,27 @@ h3 {
   text-shadow: none;
 }
 
+.kidz-page h1 {
+  color: #2d7dff;
+  text-shadow: 2px 2px 0 #fff3a5, 0 0 10px rgba(45, 125, 255, 0.2);
+  animation: none;
+}
+
+.kidz-page h3,
+.kidz-page p,
+.kidz-page li,
+.kidz-page .small {
+  color: #2f6dff;
+}
+
 .kidz-lead {
-  color: #51218b;
+  color: #2f6dff;
   font-weight: 700;
 }
 
 .kidz-statement {
-  color: #fff;
-  background: linear-gradient(90deg, rgba(255, 47, 146, 0.88), rgba(44, 188, 255, 0.86));
+  color: #fff8ff;
+  background: linear-gradient(90deg, rgba(255, 47, 146, 0.9), rgba(255, 197, 75, 0.9));
   border: 2px dashed rgba(255, 245, 166, 0.98);
 }
 
@@ -453,8 +466,8 @@ h3 {
   font-family: "Arial Black", Impact, sans-serif;
   font-size: clamp(1.1rem, 2.4vw, 1.6rem);
   text-transform: uppercase;
-  color: #fffefb;
-  text-shadow: 1px 1px 0 #7f1f68, 0 0 10px rgba(255, 255, 255, 0.28);
+  color: #2d7dff;
+  text-shadow: 1px 1px 0 #fff3a7, 0 0 10px rgba(45, 125, 255, 0.18);
 }
 
 .kidz-grid {
@@ -463,13 +476,13 @@ h3 {
 
 .kidz-chip {
   background: rgba(255, 255, 255, 0.32);
-  border: 2px dashed rgba(48, 171, 255, 0.82);
+  border: 2px dashed rgba(255, 47, 146, 0.72);
   padding: 0.7rem;
 }
 
 .kidz-questions-card {
   background:
-    linear-gradient(180deg, rgba(255, 232, 89, 0.98), rgba(64, 196, 255, 0.88) 48%, rgba(255, 112, 196, 0.92));
+    linear-gradient(180deg, rgba(255, 232, 89, 0.98), rgba(255, 150, 212, 0.94));
 }
 
 .kidz-questions-grid {
@@ -480,19 +493,19 @@ h3 {
   background: rgba(255, 255, 255, 0.35);
   border-top: 2px solid #fff7b2;
   border-left: 2px solid #fff7b2;
-  border-right: 2px solid #2c1977;
-  border-bottom: 2px solid #2c1977;
+  border-right: 2px solid #ff4aa9;
+  border-bottom: 2px solid #ff4aa9;
   padding: 0.75rem;
 }
 
 .kidz-question h3 {
-  color: #2d1770;
+  color: #ff2f92;
   margin-bottom: 0.35rem;
 }
 
 .kidz-question-label {
   margin: 0 0 0.35rem;
-  color: #ff2f92;
+  color: #2f6dff;
   font-size: 0.74rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -501,18 +514,18 @@ h3 {
 
 .kidz-answer {
   margin-bottom: 0;
-  color: #2d1770;
+  color: #2f6dff;
   font-weight: 700;
 }
 
 .kidz-highlight {
-  background: linear-gradient(180deg, rgba(255, 236, 79, 0.98), rgba(60, 194, 255, 0.9) 46%, rgba(255, 68, 166, 0.95));
+  background: linear-gradient(180deg, rgba(255, 236, 79, 0.98), rgba(255, 112, 196, 0.95));
 }
 
 .kidz-quote {
   border-left-color: #ff2f92;
   background: rgba(255, 255, 255, 0.25);
-  color: #401b8a;
+  color: #2f6dff;
   font-style: normal;
   font-weight: 700;
 }
