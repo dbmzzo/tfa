@@ -332,28 +332,65 @@ h3 {
 
 .kidz-page {
   position: relative;
+  padding-bottom: 0.4rem;
+}
+
+.kidz-site-header {
+  border-top: 3px solid #fff38f;
+  border-left: 3px solid #fff38f;
+  border-right: 3px solid #2c1172;
+  border-bottom: 3px solid #2c1172;
+  background:
+    linear-gradient(90deg, rgba(255, 49, 160, 0.98), rgba(65, 194, 255, 0.95) 52%, rgba(255, 236, 79, 0.96));
+  box-shadow: 0 0 20px rgba(255, 49, 160, 0.25);
+}
+
+.kidz-brand {
+  color: #ffffff;
+  text-shadow: 2px 2px 0 #2d136b, 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+.kidz-nav-links a {
+  color: #23114f;
+  border-top: 2px solid #fef7a6;
+  border-left: 2px solid #fef7a6;
+  border-right: 2px solid #34207d;
+  border-bottom: 2px solid #34207d;
+  background: linear-gradient(180deg, #ffec4c 0%, #ff7acc 100%);
+  text-shadow: none;
+}
+
+.kidz-nav-links a:hover,
+.kidz-nav-links a[aria-current="page"] {
+  color: #fff;
+  background: linear-gradient(180deg, #38c6ff 0%, #ff3ca0 100%);
+  border-top-color: #fff7b5;
+  border-left-color: #fff7b5;
+  box-shadow: 0 0 12px rgba(56, 198, 255, 0.45);
 }
 
 .kidz-hero {
   background:
-    radial-gradient(circle at top left, rgba(255, 237, 87, 0.34), transparent 32%),
-    radial-gradient(circle at top right, rgba(255, 80, 180, 0.28), transparent 34%),
-    linear-gradient(180deg, #ff4ba3 0%, #ff9d1e 52%, #ffe84a 100%);
+    radial-gradient(circle at top left, rgba(255, 241, 120, 0.45), transparent 28%),
+    radial-gradient(circle at top right, rgba(255, 61, 165, 0.38), transparent 30%),
+    radial-gradient(circle at 50% 70%, rgba(68, 202, 255, 0.28), transparent 30%),
+    linear-gradient(135deg, #ff2d97 0%, #ff6fbe 24%, #37c6ff 58%, #fff04d 100%);
 }
 
 .kidz-hero::before {
   background:
-    linear-gradient(to bottom, rgba(120, 0, 68, 0.18), rgba(110, 38, 0, 0.22)),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.18), transparent 42%);
+    linear-gradient(to bottom, rgba(44, 15, 122, 0.16), rgba(255, 62, 161, 0.12)),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.22), transparent 42%);
 }
 
 .kidz-hero::after {
   background:
     radial-gradient(circle, rgba(255, 255, 255, 0.22) 0 2px, transparent 3px),
-    radial-gradient(circle, rgba(255, 230, 73, 0.32) 0 3px, transparent 4px);
-  background-size: 44px 44px, 72px 72px;
-  background-position: 0 0, 16px 14px;
-  opacity: 0.45;
+    radial-gradient(circle, rgba(255, 230, 73, 0.34) 0 3px, transparent 4px),
+    radial-gradient(circle, rgba(65, 194, 255, 0.28) 0 4px, transparent 5px);
+  background-size: 44px 44px, 72px 72px, 88px 88px;
+  background-position: 0 0, 16px 14px, 28px 36px;
+  opacity: 0.55;
 }
 
 .kidz-hero-inner {
@@ -366,27 +403,30 @@ h3 {
 .kidz-hero-card,
 .kidz-badge-card,
 .kidz-card {
-  color: #4d1034;
+  color: #2f1563;
   border-top: 3px solid #fff7b0;
   border-left: 3px solid #fff7b0;
-  border-right: 3px solid #a33964;
-  border-bottom: 3px solid #a33964;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  border-right: 3px solid #2e1b7e;
+  border-bottom: 3px solid #2e1b7e;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15), 0 0 18px rgba(60, 167, 255, 0.18);
 }
 
 .kidz-hero-card {
-  background: linear-gradient(180deg, rgba(255, 247, 176, 0.96), rgba(255, 220, 97, 0.96));
+  background:
+    linear-gradient(180deg, rgba(255, 247, 176, 0.97), rgba(255, 223, 83, 0.97));
 }
 
 .kidz-badge-card {
-  background: linear-gradient(180deg, rgba(255, 153, 211, 0.96), rgba(255, 212, 82, 0.96));
+  background:
+    linear-gradient(180deg, rgba(70, 201, 255, 0.96), rgba(255, 121, 203, 0.95) 54%, rgba(255, 231, 85, 0.96));
   display: grid;
   align-content: center;
   text-align: center;
 }
 
 .kidz-card {
-  background: linear-gradient(180deg, rgba(255, 244, 143, 0.95), rgba(255, 183, 219, 0.93));
+  background:
+    linear-gradient(180deg, rgba(255, 244, 143, 0.96), rgba(126, 225, 255, 0.9) 55%, rgba(255, 166, 217, 0.93));
 }
 
 .kidz-kicker,
@@ -398,14 +438,14 @@ h3 {
 }
 
 .kidz-lead {
-  color: #6b1639;
+  color: #51218b;
   font-weight: 700;
 }
 
 .kidz-statement {
   color: #fff;
-  background: rgba(255, 47, 146, 0.82);
-  border: 2px dashed rgba(255, 245, 166, 0.95);
+  background: linear-gradient(90deg, rgba(255, 47, 146, 0.88), rgba(44, 188, 255, 0.86));
+  border: 2px dashed rgba(255, 245, 166, 0.98);
 }
 
 .kidz-big-line {
@@ -413,7 +453,8 @@ h3 {
   font-family: "Arial Black", Impact, sans-serif;
   font-size: clamp(1.1rem, 2.4vw, 1.6rem);
   text-transform: uppercase;
-  color: #7a103f;
+  color: #fffefb;
+  text-shadow: 1px 1px 0 #7f1f68, 0 0 10px rgba(255, 255, 255, 0.28);
 }
 
 .kidz-grid {
@@ -421,25 +462,64 @@ h3 {
 }
 
 .kidz-chip {
-  background: rgba(255, 255, 255, 0.34);
-  border: 2px dashed rgba(255, 47, 146, 0.7);
+  background: rgba(255, 255, 255, 0.32);
+  border: 2px dashed rgba(48, 171, 255, 0.82);
   padding: 0.7rem;
 }
 
+.kidz-questions-card {
+  background:
+    linear-gradient(180deg, rgba(255, 232, 89, 0.98), rgba(64, 196, 255, 0.88) 48%, rgba(255, 112, 196, 0.92));
+}
+
+.kidz-questions-grid {
+  align-items: stretch;
+}
+
+.kidz-question {
+  background: rgba(255, 255, 255, 0.35);
+  border-top: 2px solid #fff7b2;
+  border-left: 2px solid #fff7b2;
+  border-right: 2px solid #2c1977;
+  border-bottom: 2px solid #2c1977;
+  padding: 0.75rem;
+}
+
+.kidz-question h3 {
+  color: #2d1770;
+  margin-bottom: 0.35rem;
+}
+
+.kidz-question-label {
+  margin: 0 0 0.35rem;
+  color: #ff2f92;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.kidz-answer {
+  margin-bottom: 0;
+  color: #2d1770;
+  font-weight: 700;
+}
+
 .kidz-highlight {
-  background: linear-gradient(180deg, rgba(255, 233, 78, 0.98), rgba(255, 112, 188, 0.95));
+  background: linear-gradient(180deg, rgba(255, 236, 79, 0.98), rgba(60, 194, 255, 0.9) 46%, rgba(255, 68, 166, 0.95));
 }
 
 .kidz-quote {
   border-left-color: #ff2f92;
   background: rgba(255, 255, 255, 0.25);
-  color: #5e1132;
+  color: #401b8a;
   font-style: normal;
   font-weight: 700;
 }
 
 .kidz-footer {
-  background: linear-gradient(180deg, rgba(255, 78, 163, 0.36), rgba(255, 222, 66, 0.3));
+  border-top: 2px solid rgba(255, 241, 120, 0.9);
+  background: linear-gradient(90deg, rgba(255, 58, 160, 0.34), rgba(57, 198, 255, 0.3), rgba(255, 232, 73, 0.32));
 }
 
 .actions-panel {
