@@ -301,15 +301,15 @@ h3 {
 
 .chapter-history-figure .history-figure {
   margin-bottom: 0.45rem;
-  width: 440px;
-  height: 600px;
+  width: 220px;
+  height: 300px;
   max-width: none;
   object-fit: cover;
 }
 
 .chapter-history-figure-left {
   float: left;
-  width: 480px;
+  width: 260px;
   margin: 0.2rem 0.9rem 0.55rem 0;
 }
 
