@@ -295,6 +295,37 @@ h3 {
   margin-bottom: 0;
 }
 
+.chapter-history-intro {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1.3fr);
+  gap: 0.9rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.chapter-history-figure {
+  margin: 0;
+}
+
+.chapter-history-figure .history-figure {
+  margin-bottom: 0.45rem;
+}
+
+.chapter-history-copy > *:last-child,
+.chapter-history-section > *:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-history-flow {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.chapter-history-section {
+  border-left: 2px dashed rgba(230, 195, 140, 0.65);
+  padding-left: 0.8rem;
+}
+
 .actions-panel {
   background: linear-gradient(180deg, rgba(44, 27, 17, 0.92), rgba(20, 12, 8, 0.92));
 }
@@ -661,6 +692,10 @@ h3 {
   }
 
   .hero-home-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-history-intro {
     grid-template-columns: 1fr;
   }
 
