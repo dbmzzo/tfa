@@ -582,6 +582,44 @@ h3 {
   background: linear-gradient(180deg, rgba(255, 236, 79, 0.98), rgba(255, 112, 196, 0.95));
 }
 
+.kidz-products-card {
+  background: linear-gradient(180deg, rgba(255, 232, 89, 0.98), rgba(255, 162, 221, 0.95));
+}
+
+.kidz-products-intro {
+  margin-top: 0;
+  margin-bottom: 0.8rem;
+}
+
+.kidz-products-grid {
+  align-items: stretch;
+}
+
+.kidz-product {
+  background: rgba(255, 255, 255, 0.34);
+  border-top: 2px solid #fff7b2;
+  border-left: 2px solid #fff7b2;
+  border-right: 2px solid #ff4aa9;
+  border-bottom: 2px solid #ff4aa9;
+  padding: 0.75rem;
+}
+
+.kidz-product-image {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto 0.7rem;
+}
+
+.kidz-product h3 {
+  color: #ff2f92;
+  margin-bottom: 0.35rem;
+}
+
+.kidz-product p:last-child {
+  margin-bottom: 0;
+}
+
 .kidz-quote {
   border-left-color: #ff2f92;
   background: rgba(255, 255, 255, 0.25);

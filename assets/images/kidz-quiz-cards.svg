@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-labelledby="title desc">
+  <title id="title">Hootlet Quiz Cards</title>
+  <desc id="desc">A stack of colorful trivia cards with stars and a smiling owl badge.</desc>
+  <rect width="320" height="220" rx="28" fill="#fff3a4"/>
+  <circle cx="56" cy="52" r="18" fill="#ff5bb3"/>
+  <circle cx="270" cy="55" r="14" fill="#49c7ff"/>
+  <circle cx="284" cy="160" r="10" fill="#ffe14e"/>
+  <rect x="72" y="54" width="120" height="92" rx="14" fill="#4bc9ff" transform="rotate(-10 72 54)"/>
+  <rect x="104" y="66" width="120" height="92" rx="14" fill="#ff8ecf" transform="rotate(6 104 66)"/>
+  <rect x="88" y="78" width="140" height="98" rx="16" fill="#ffffff" stroke="#6d2fff" stroke-width="5"/>
+  <circle cx="128" cy="118" r="22" fill="#ffe14e" stroke="#ff8b2b" stroke-width="5"/>
+  <circle cx="120" cy="114" r="4" fill="#1d2d7d"/>
+  <circle cx="136" cy="114" r="4" fill="#1d2d7d"/>
+  <path d="M124 124 Q128 130 132 124" fill="none" stroke="#1d2d7d" stroke-width="4" stroke-linecap="round"/>
+  <rect x="160" y="102" width="48" height="8" rx="4" fill="#49c7ff"/>
+  <rect x="160" y="118" width="38" height="8" rx="4" fill="#ff5bb3"/>
+  <rect x="160" y="134" width="54" height="8" rx="4" fill="#ffe14e"/>
+  <path d="M42 141 l10 18 18 4-14 12 3 18-17-9-17 9 3-18-14-12 18-4z" fill="#ff8ecf"/>
+  <path d="M264 86 l7 12 12 3-9 8 2 13-12-6-11 6 2-13-10-8 13-3z" fill="#ffe14e"/>
+</svg>

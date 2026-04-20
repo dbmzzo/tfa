@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" role="img" aria-labelledby="title desc">
+  <title id="title">Hootlet Host Kit</title>
+  <desc id="desc">A colorful host kit with a clipboard, whistle, and score stars.</desc>
+  <rect width="320" height="220" rx="28" fill="#ffe89b"/>
+  <rect x="76" y="34" width="132" height="150" rx="16" fill="#fffefc" stroke="#ff5bb3" stroke-width="6"/>
+  <rect x="118" y="24" width="48" height="20" rx="10" fill="#6d2fff"/>
+  <rect x="98" y="64" width="88" height="10" rx="5" fill="#49c7ff"/>
+  <rect x="98" y="84" width="74" height="10" rx="5" fill="#ffe14e"/>
+  <rect x="98" y="104" width="82" height="10" rx="5" fill="#ff8ecf"/>
+  <rect x="98" y="124" width="68" height="10" rx="5" fill="#49c7ff"/>
+  <circle cx="246" cy="88" r="22" fill="#49c7ff"/>
+  <circle cx="246" cy="88" r="10" fill="#ffffff"/>
+  <rect x="230" y="102" width="22" height="44" rx="11" fill="#6d2fff" transform="rotate(28 230 102)"/>
+  <path d="M251 146 l10 18 19 3-14 12 4 18-16-9-16 9 3-18-14-12 19-3z" fill="#ff5bb3"/>
+  <path d="M44 70 l8 14 15 3-11 10 3 15-14-7-14 7 3-15-11-10 15-3z" fill="#8b63ff"/>
+</svg>
