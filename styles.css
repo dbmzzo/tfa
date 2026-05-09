@@ -699,6 +699,17 @@ h3 {
   max-width: 1024px;
 }
 
+.governance-board-image {
+  display: block;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0.9rem auto 0;
+  border-top: 2px solid #d6b98b;
+  border-left: 2px solid #d6b98b;
+  border-right: 2px solid #2a160e;
+  border-bottom: 2px solid #2a160e;
+}
+
 .footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 0.9rem;
