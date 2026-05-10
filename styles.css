@@ -846,6 +846,10 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.three-col {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .custom-form label {
   display: grid;
   gap: 0.3rem;
@@ -857,7 +861,9 @@ h3 {
 
 .custom-form input[type="text"],
 .custom-form input[type="email"],
-.custom-form input[type="date"] {
+.custom-form input[type="date"],
+.custom-form select,
+.custom-form textarea {
   width: 100%;
   padding: 0.5rem;
   border-top: 2px solid #d6b98b;
@@ -920,9 +926,20 @@ h3 {
   opacity: 1;
 }
 
-.custom-form input:focus {
+.custom-form input:focus,
+.custom-form select:focus,
+.custom-form textarea:focus {
   outline: 2px solid rgba(208, 124, 42, 0.75);
   outline-offset: 1px;
+}
+
+.custom-form textarea {
+  resize: vertical;
+  min-height: 6rem;
+}
+
+.custom-form select {
+  appearance: none;
 }
 
 .choices-block {
@@ -941,6 +958,10 @@ h3 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+}
+
+.inner-block {
+  margin-top: 0.75rem;
 }
 
 .custom-form label.choice-item {
@@ -988,6 +1009,29 @@ h3 {
   flex-wrap: wrap;
   gap: 0.6rem;
   align-items: center;
+}
+
+.scale-block {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.scale-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.scale-choice {
+  align-items: center;
+}
+
+.expedite-note {
+  margin-top: 0.75rem;
+}
+
+.expedite-note > *:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes blink-glow {
@@ -1041,6 +1085,10 @@ h3 {
   }
 
   .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .three-col {
     grid-template-columns: 1fr;
   }
 }
