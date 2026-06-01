@@ -1322,6 +1322,123 @@ body.board-page .post-body {
   background: rgba(255, 255, 255, 0.04);
 }
 
+body.board-page .post-votes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.7rem;
+}
+
+body.board-page .post-vote-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-top: 2px solid #9ed8ff;
+  border-left: 2px solid #9ed8ff;
+  border-right: 2px solid #061322;
+  border-bottom: 2px solid #061322;
+  background: linear-gradient(180deg, #1b5fd6 0%, #0a234f 100%);
+  color: #eef7ff;
+  padding: 0.28rem 0.55rem;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+body.board-page .post-vote-button:hover {
+  background: linear-gradient(180deg, #ff3a58 0%, #177eff 52%, #00c56d 100%);
+}
+
+body.board-page .post-vote-label {
+  text-transform: uppercase;
+}
+
+body.board-page .post-vote-count {
+  min-width: 1.6rem;
+  text-align: center;
+  color: #8dffcb;
+}
+
+body.board-page.board-modal-open {
+  overflow: hidden;
+}
+
+body.board-page .board-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+}
+
+body.board-page .board-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(2, 8, 18, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+body.board-page .board-modal-dialog {
+  position: relative;
+  width: min(92vw, 520px);
+  padding: 1rem;
+  border-top: 2px solid #a5dbff;
+  border-left: 2px solid #a5dbff;
+  border-right: 2px solid #07101d;
+  border-bottom: 2px solid #07101d;
+  background:
+    linear-gradient(135deg, rgba(255, 42, 82, 0.12), transparent 32%),
+    linear-gradient(180deg, rgba(18, 57, 114, 0.98), rgba(5, 14, 32, 0.99));
+  box-shadow: 0 0 0 1px rgba(18, 80, 178, 0.35), 0 0 28px rgba(8, 70, 208, 0.22);
+}
+
+body.board-page .board-modal-dialog h2 {
+  margin-bottom: 0.65rem;
+  color: #eef7ff;
+}
+
+body.board-page .board-modal-copy {
+  margin-top: 0;
+  margin-bottom: 0.9rem;
+  color: #c9ddf5;
+  font-weight: 700;
+}
+
+body.board-page .board-modal-action {
+  display: inline-block;
+  border-top: 2px solid #9ed8ff;
+  border-left: 2px solid #9ed8ff;
+  border-right: 2px solid #061322;
+  border-bottom: 2px solid #061322;
+  background: linear-gradient(180deg, #1b5fd6 0%, #0a234f 100%);
+  color: #fff;
+  text-decoration: none;
+  padding: 0.34rem 0.7rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body.board-page .board-modal-action:hover {
+  background: linear-gradient(180deg, #ff3a58 0%, #177eff 52%, #00c56d 100%);
+}
+
+body.board-page .board-modal-close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.45rem;
+  border: 0;
+  background: transparent;
+  color: #8dffcb;
+  font: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
 .quote {
   border-left: 4px solid var(--neon-pink);
   padding-left: 0.7rem;
