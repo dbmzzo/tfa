@@ -37,7 +37,29 @@
   <main>
     <section class="page-title">
       <h1>TFA Message Board</h1>
-      <p class="lead">Archived community discussion from league captains, question writers, scorekeepers, and longtime trivia regulars.</p>
+      <p class="lead">Choose a topic to open its own dedicated thread page, like a classic message board index.</p>
+    </section>
+
+    <section class="section">
+      <article class="card board-login-panel">
+        <div>
+          <p class="board-kicker">Member Access</p>
+          <h2>Log In To The Message Board</h2>
+          <p class="thread-excerpt">Sign in to reply, bookmark investigations, and join live disputes about scoring, question quality, and TFA lore.</p>
+        </div>
+        <form class="board-login-form" action="#" method="post">
+          <label for="board-username">Username</label>
+          <input id="board-username" name="username" type="text" placeholder="QuizHandle77">
+
+          <label for="board-password">Password</label>
+          <input id="board-password" name="password" type="password" placeholder="Enter your password">
+
+          <div class="board-login-actions">
+            <button class="board-login-button" type="submit">Log In</button>
+            <a class="thread-back-link board-create-account" href="message-board-access.html">Create Account</a>
+          </div>
+        </form>
+      </article>
     </section>
 
     <section class="section">
@@ -48,281 +70,76 @@
           <p>Use this board to discuss rulings, question challenges, event operations, and TFA history. Posts reflect community opinion and archival rumor, not official TFA findings.</p>
         </div>
         <div class="board-stats">
-          <p><strong>Open Threads:</strong> 6</p>
-          <p><strong>Active Participants:</strong> 19</p>
-          <p><strong>Latest Reply:</strong> 11:42 PM by QuizMistress77</p>
+          <p><strong>Open Threads:</strong> 7</p>
+          <p><strong>Active Participants:</strong> 21</p>
+          <p><strong>Latest Reply:</strong> 12:08 AM by RelicWatch</p>
         </div>
       </article>
     </section>
 
-    <section class="section board-list">
-      <details class="card board-thread" open>
-        <summary class="thread-header">
-          <div>
-            <p class="thread-tag">Rules Dispute</p>
-            <h2>Should half-credit count when a finals answer has the right person but wrong title?</h2>
-          </div>
-          <p class="thread-meta">Started by <strong>PubJudgeMara</strong> | 14 replies</p>
-          <span class="thread-toggle-badge" aria-hidden="true">Collapse</span>
-        </summary>
-        <div class="post-list">
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-pubjudge" aria-hidden="true"></span>
-              <strong>PubJudgeMara</strong>
-              <span>League scorekeeper</span>
-            </div>
-            <div class="post-body">
-              <p>Last night a team answered "Harriet Tubman, Secretary of the Underground Railroad." Obviously the office is wrong, but the person is clearly right. Our house rule says finals answers must be "substantially complete." I gave half-credit and now two teams are appealing.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-stacked" aria-hidden="true"></span>
-              <strong>StackedChips</strong>
-              <span>Tuesday captain</span>
-            </div>
-            <div class="post-body">
-              <p>If the category was historical titles, I would mark it wrong. If the category was famous abolitionists, I would allow the identification and ignore the invented title. Context matters more than the stray wording.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-dent" aria-hidden="true"></span>
-              <strong>TriviaDent</strong>
-              <span>Question editor</span>
-            </div>
-            <div class="post-body">
-              <p>TFA Appeal Note 4.2 usually asks whether the wrong detail creates a new false claim that changes the answer's meaning. In this case it does, so I would have gone with zero unless your league handbook explicitly allows split scoring.</p>
-            </div>
-          </article>
+    <section class="section board-index">
+      <article class="card board-index-row">
+        <div>
+          <p class="thread-tag">Rules Dispute</p>
+          <h2><a class="thread-link" href="thread-half-credit.html">Should half-credit count when a finals answer has the right person but wrong title?</a></h2>
+          <p class="thread-excerpt">A finals ruling sparks an appeal after a team identifies Harriet Tubman correctly but invents a title that never existed.</p>
         </div>
-      </details>
+        <p class="thread-meta">Started by <strong>PubJudgeMara</strong> | 14 replies</p>
+      </article>
 
-      <details class="card board-thread" open>
-        <summary class="thread-header">
-          <div>
-            <p class="thread-tag">Question Quality</p>
-            <h2>Ambiguous moon question in Round 3: does "largest moon" need a planet named?</h2>
-          </div>
-          <p class="thread-meta">Started by <strong>CosmicPam</strong> | 9 replies</p>
-          <span class="thread-toggle-badge" aria-hidden="true">Collapse</span>
-        </summary>
-        <div class="post-list">
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-cosmic" aria-hidden="true"></span>
-              <strong>CosmicPam</strong>
-              <span>Regional finalist</span>
-            </div>
-            <div class="post-body">
-              <p>The prompt just asked for "the largest moon in the solar system." My team wrote Ganymede. Another team wrote Titan and argued the host never specified "current accepted measurements" versus "largest visible apparent size." Nobody at the table had ever heard that distinction before.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-bellringer" aria-hidden="true"></span>
-              <strong>BellringerLou</strong>
-              <span>Host</span>
-            </div>
-            <div class="post-body">
-              <p>That is a badly phrased question, full stop. If a host leaves room for alternate interpretations, the safest ruling is to void it and make the round score out of one fewer point.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-northtable" aria-hidden="true"></span>
-              <strong>NorthTableNina</strong>
-              <span>Stats volunteer</span>
-            </div>
-            <div class="post-body">
-              <p>Our circuit added a proofreading checklist after this exact type of problem. Any superlative question now gets a required qualifier line: by area, by population, by distance, by mass, and so on.</p>
-            </div>
-          </article>
+      <article class="card board-index-row">
+        <div>
+          <p class="thread-tag">Question Quality</p>
+          <h2><a class="thread-link" href="thread-largest-moon.html">Ambiguous moon question in Round 3: does "largest moon" need a planet named?</a></h2>
+          <p class="thread-excerpt">Players argue over whether a superlative science question needed tighter wording before points were awarded.</p>
         </div>
-      </details>
+        <p class="thread-meta">Started by <strong>CosmicPam</strong> | 9 replies</p>
+      </article>
 
-      <details class="card board-thread">
-        <summary class="thread-header">
-          <div>
-            <p class="thread-tag">Operations</p>
-            <h2>Buzzer latency at the Lakeside Invitational changed three tossups</h2>
-          </div>
-          <p class="thread-meta">Started by <strong>RedPenWalter</strong> | 11 replies</p>
-          <span class="thread-toggle-badge" aria-hidden="true">Expand</span>
-        </summary>
-        <div class="post-list">
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-redpen" aria-hidden="true"></span>
-              <strong>RedPenWalter</strong>
-              <span>Moderator</span>
-            </div>
-            <div class="post-body">
-              <p>We reviewed the recording and there is a consistent delay between the room audio and the scoring console. It is small, but in a speed format that is enough to reverse at least three buzzes. Has anyone seen TFA issue a formal console calibration standard?</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-fretboard" aria-hidden="true"></span>
-              <strong>FretboardIris</strong>
-              <span>Tech marshal</span>
-            </div>
-            <div class="post-body">
-              <p>Not a universal standard, but several invitationals now do a pre-match latency check with a dummy light and synchronized video. If the hardware is older than the house mixer, you are asking for trouble.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-quizmistress" aria-hidden="true"></span>
-              <strong>QuizMistress77</strong>
-              <span>Former appeals chair</span>
-            </div>
-            <div class="post-body">
-              <p>I would replay only the affected tossups if both teams can be reseated quickly. Replaying the entire match sounds cleaner on paper, but it punishes everyone for a wiring error.</p>
-            </div>
-          </article>
+      <article class="card board-index-row">
+        <div>
+          <p class="thread-tag">Operations</p>
+          <h2><a class="thread-link" href="thread-buzzer-latency.html">Buzzer latency at the Lakeside Invitational changed three tossups</a></h2>
+          <p class="thread-excerpt">Officials review whether hardware delay was enough to justify replaying tossups in a high-speed invitational match.</p>
         </div>
-      </details>
+        <p class="thread-meta">Started by <strong>RedPenWalter</strong> | 11 replies</p>
+      </article>
 
-      <details class="card board-thread">
-        <summary class="thread-header">
-          <div>
-            <p class="thread-tag">Standings</p>
-            <h2>Do retroactive penalties belong in season standings after a leaked packet?</h2>
-          </div>
-          <p class="thread-meta">Started by <strong>BracketMoss</strong> | 7 replies</p>
-          <span class="thread-toggle-badge" aria-hidden="true">Expand</span>
-        </summary>
-        <div class="post-list">
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-bracket" aria-hidden="true"></span>
-              <strong>BracketMoss</strong>
-              <span>League organizer</span>
-            </div>
-            <div class="post-body">
-              <p>We found out two weeks later that one semifinal packet had been shared in a private group chat. There is no proof the first-place team opened it, but the distribution itself is documented. Do you freeze the standings or strip results anyway to protect the league?</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-archivist" aria-hidden="true"></span>
-              <strong>ArchivistLen</strong>
-              <span>Rules historian</span>
-            </div>
-            <div class="post-body">
-              <p>Transparency beats certainty here. Publish the timeline, void the packet if contamination is plausible, and explain why the remedy is procedural rather than accusatory. Players can live with a replay more easily than a secretive ruling.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-sidepot" aria-hidden="true"></span>
-              <strong>SidePotSal</strong>
-              <span>Bar league captain</span>
-            </div>
-            <div class="post-body">
-              <p>Retroactive penalties should be the last resort. If you cannot identify an advantaged team, punish the process that failed, not the standings table.</p>
-            </div>
-          </article>
+      <article class="card board-index-row">
+        <div>
+          <p class="thread-tag">Standings</p>
+          <h2><a class="thread-link" href="thread-leaked-packet.html">Do retroactive penalties belong in season standings after a leaked packet?</a></h2>
+          <p class="thread-excerpt">A documented packet leak leaves organizers weighing procedural fairness against punishing teams without proof.</p>
         </div>
-      </details>
+        <p class="thread-meta">Started by <strong>BracketMoss</strong> | 7 replies</p>
+      </article>
 
-      <details class="card board-thread">
-        <summary class="thread-header">
-          <div>
-            <p class="thread-tag">Historical Rumors</p>
-            <h2>Old rumor: was the TFA founded out of the same salons as the Order of St. Apollonia?</h2>
-          </div>
-          <p class="thread-meta">Started by <strong>CandleQuizzer</strong> | 22 replies</p>
-          <span class="thread-toggle-badge" aria-hidden="true">Expand</span>
-        </summary>
-        <div class="post-list">
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-candle" aria-hidden="true"></span>
-              <strong>CandleQuizzer</strong>
-              <span>Archive digger</span>
-            </div>
-            <div class="post-body">
-              <p>I keep seeing references in old newsletter scans to "the Apollonian rooms" where early fairness committees met. Was that just a rented salon, or is this where the stories about the TFA being tied to secret societies started?</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-archivist" aria-hidden="true"></span>
-              <strong>ArchivistLen</strong>
-              <span>Rules historian</span>
-            </div>
-            <div class="post-body">
-              <p>Most evidence points to literary clubs borrowing symbolic language, not an actual clandestine order running trivia governance. Early associations loved ceremonial names, wax seals, and overly dramatic minutes.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-velvet" aria-hidden="true"></span>
-              <strong>VelvetGavel</strong>
-              <span>Convention regular</span>
-            </div>
-            <div class="post-body">
-              <p>The rumor persists because the founders apparently held midnight rules readings during the 1928 congress. That sounds mysterious until you realize they were just trying to finish before the train schedule changed.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-northtable" aria-hidden="true"></span>
-              <strong>NorthTableNina</strong>
-              <span>Stats volunteer</span>
-            </div>
-            <div class="post-body">
-              <p>I like the version where the "inner circle" was simply the proofreading committee with a private key to the filing cabinet. Secret society is more fun, but bad records management is usually the real answer.</p>
-            </div>
-          </article>
+      <article class="card board-index-row">
+        <div>
+          <p class="thread-tag">Historical Rumors</p>
+          <h2><a class="thread-link" href="thread-apollonia.html">Old rumor: was the TFA founded out of the same salons as the Order of St. Apollonia?</a></h2>
+          <p class="thread-excerpt">Archive enthusiasts dig into whether ceremonial language in old newsletters points to a secretive origin story.</p>
         </div>
-      </details>
+        <p class="thread-meta">Started by <strong>CandleQuizzer</strong> | 22 replies</p>
+      </article>
 
-      <details class="card board-thread">
-        <summary class="thread-header">
-          <div>
-            <p class="thread-tag">Conspiracy Corner</p>
-            <h2>Why does every third TFA crest have owls, keys, or stars on it?</h2>
-          </div>
-          <p class="thread-meta">Started by <strong>SignalFlareJo</strong> | 18 replies</p>
-          <span class="thread-toggle-badge" aria-hidden="true">Expand</span>
-        </summary>
-        <div class="post-list">
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-signal" aria-hidden="true"></span>
-              <strong>SignalFlareJo</strong>
-              <span>Late-night poster</span>
-            </div>
-            <div class="post-body">
-              <p>Owls for wisdom, keys for access, stars for rank. I know, I know, it could all be normal symbolism, but you cannot tell me the 1963 crest does not look like it belongs on a velvet robe in a basement lodge.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-pubjudge" aria-hidden="true"></span>
-              <strong>PubJudgeMara</strong>
-              <span>League scorekeeper</span>
-            </div>
-            <div class="post-body">
-              <p>Counterpoint: every civic club between 1900 and 1970 used the exact same symbols. If the TFA is a secret society, then so was my grandfather's bowling association.</p>
-            </div>
-          </article>
-          <article class="board-post">
-            <div class="post-author">
-              <span class="post-avatar avatar-bellringer" aria-hidden="true"></span>
-              <strong>BellringerLou</strong>
-              <span>Host</span>
-            </div>
-            <div class="post-body">
-              <p>The best explanation I have heard is that an early emblem designer recycled iconography from academic medals and fraternal print catalogs. That is much less thrilling than a hidden council, but probably much closer to the truth.</p>
-            </div>
-          </article>
+      <article class="card board-index-row">
+        <div>
+          <p class="thread-tag">Conspiracy Corner</p>
+          <h2><a class="thread-link" href="thread-crest-symbols.html">Why does every third TFA crest have owls, keys, or stars on it?</a></h2>
+          <p class="thread-excerpt">A late-night iconography debate asks whether old TFA crests are normal academic symbolism or something stranger.</p>
         </div>
-      </details>
+        <p class="thread-meta">Started by <strong>SignalFlareJo</strong> | 18 replies</p>
+      </article>
+
+      <article class="card board-index-row">
+        <div>
+          <p class="thread-tag">Conspiracy Corner</p>
+          <h2><a class="thread-link" href="thread-knights-templar.html">Was the TFA a Knights Templar front for collecting ancient and mystical relics?</a></h2>
+          <p class="thread-excerpt">One poster insists the TFA was a respectable trivia facade built to locate relics, while everyone else tries to decide whether the evidence is sinister or just eccentric bookkeeping.</p>
+        </div>
+        <p class="thread-meta">Started by <strong>RelicWatch</strong> | 12 replies</p>
+      </article>
     </section>
   </main>
 
