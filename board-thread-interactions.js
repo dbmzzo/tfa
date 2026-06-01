@@ -81,6 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
     downButton.className = "post-vote-button";
     downButton.innerHTML = '<span class="post-vote-label">Down Hoot</span><span class="post-vote-count">' + downCount + "</span>";
 
+    var replyButton = document.createElement("button");
+    replyButton.type = "button";
+    replyButton.className = "post-vote-button post-reply-button";
+    replyButton.innerHTML = '<span class="post-vote-label">Reply</span>';
+
     upButton.addEventListener("click", function () {
       toggleModal(true);
     });
@@ -89,8 +94,13 @@ document.addEventListener("DOMContentLoaded", function () {
       toggleModal(true);
     });
 
+    replyButton.addEventListener("click", function () {
+      toggleModal(true);
+    });
+
     voteBar.appendChild(upButton);
     voteBar.appendChild(downButton);
+    voteBar.appendChild(replyButton);
     postBody.appendChild(voteBar);
   });
 });

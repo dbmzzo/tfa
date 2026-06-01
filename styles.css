@@ -865,6 +865,16 @@ body.board-page .thread-toggle-badge:hover {
   margin-top: 0.35rem;
 }
 
+.board-thread-cta {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(141, 208, 255, 0.24);
+}
+
+.board-start-thread-button {
+  display: inline-block;
+}
+
 .board-login-button {
   display: inline-block;
   border-top: 2px solid #d6b98b;
@@ -1349,6 +1359,10 @@ body.board-page .post-vote-button {
 
 body.board-page .post-vote-button:hover {
   background: linear-gradient(180deg, #ff3a58 0%, #177eff 52%, #00c56d 100%);
+}
+
+body.board-page .post-reply-button {
+  padding-inline: 0.8rem;
 }
 
 body.board-page .post-vote-label {
