@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     '<a class="board-modal-action" href="message-board-access.html">Create An Account</a>' +
     "</div>";
   document.body.appendChild(modal);
+  var dialog = modal.querySelector(".board-modal-dialog");
 
   function toggleModal(show) {
     modal.hidden = !show;
@@ -32,7 +33,16 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   modal.addEventListener("click", function (event) {
-    if (event.target instanceof HTMLElement && event.target.dataset.close === "true") {
+    if (!(event.target instanceof HTMLElement)) {
+      return;
+    }
+
+    if (event.target.dataset.close === "true") {
+      toggleModal(false);
+      return;
+    }
+
+    if (dialog && !dialog.contains(event.target)) {
       toggleModal(false);
     }
   });
