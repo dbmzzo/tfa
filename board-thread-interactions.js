@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var modal = document.createElement("div");
   modal.className = "board-modal";
   modal.hidden = true;
+  modal.setAttribute("aria-hidden", "true");
   modal.innerHTML =
     '<div class="board-modal-backdrop" data-close="true"></div>' +
     '<div class="board-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="board-modal-title">' +
@@ -19,7 +20,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function toggleModal(show) {
     modal.hidden = !show;
+    modal.setAttribute("aria-hidden", show ? "false" : "true");
     document.body.classList.toggle("board-modal-open", show);
+  }
+
+  var closeButton = modal.querySelector(".board-modal-close");
+  if (closeButton) {
+    closeButton.addEventListener("click", function () {
+      toggleModal(false);
+    });
   }
 
   modal.addEventListener("click", function (event) {
