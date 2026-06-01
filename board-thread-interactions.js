@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var modal = document.createElement("div");
   modal.className = "board-modal";
   modal.hidden = true;
+  modal.style.display = "none";
   modal.setAttribute("aria-hidden", "true");
   modal.innerHTML =
     '<div class="board-modal-backdrop" data-close="true"></div>' +
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function toggleModal(show) {
     modal.hidden = !show;
+    modal.style.display = show ? "grid" : "none";
     modal.setAttribute("aria-hidden", show ? "false" : "true");
     document.body.classList.toggle("board-modal-open", show);
   }
@@ -29,6 +31,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (closeButton) {
     closeButton.addEventListener("click", function () {
       toggleModal(false);
+    });
+  }
+
+  if (dialog) {
+    dialog.addEventListener("click", function (event) {
+      event.stopPropagation();
     });
   }
 
@@ -42,9 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    if (dialog && !dialog.contains(event.target)) {
-      toggleModal(false);
-    }
+    toggleModal(false);
   });
 
   document.addEventListener("keydown", function (event) {
