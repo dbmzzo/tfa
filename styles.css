@@ -734,6 +734,462 @@ h3 {
   margin-bottom: 0.3rem;
 }
 
+.board-intro {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 0.8rem;
+  align-items: start;
+  background: linear-gradient(180deg, rgba(54, 33, 21, 0.95), rgba(24, 15, 10, 0.95));
+}
+
+.board-kicker,
+.thread-tag {
+  margin: 0 0 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+  color: var(--neon-yellow);
+  font-weight: 700;
+}
+
+.board-stats {
+  border-top: 2px solid rgba(214, 185, 139, 0.85);
+  border-left: 2px solid rgba(214, 185, 139, 0.85);
+  border-right: 2px solid rgba(42, 22, 14, 0.9);
+  border-bottom: 2px solid rgba(42, 22, 14, 0.9);
+  background: rgba(208, 124, 42, 0.08);
+  padding: 0.7rem;
+}
+
+.board-stats p,
+.thread-meta,
+.post-author span {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+}
+
+.board-stats p + p {
+  margin-top: 0.35rem;
+}
+
+.board-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.board-index {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.board-login-panel {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 0.9rem;
+  align-items: start;
+  background: linear-gradient(180deg, rgba(56, 34, 22, 0.95), rgba(24, 15, 10, 0.95));
+}
+
+.board-login-form {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.board-login-form label {
+  color: var(--neon-yellow);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.board-login-form input {
+  width: 100%;
+  padding: 0.5rem 0.55rem;
+  border-top: 2px solid #d6b98b;
+  border-left: 2px solid #d6b98b;
+  border-right: 2px solid #2a160e;
+  border-bottom: 2px solid #2a160e;
+  background: #f5ead8;
+  color: #24150d;
+  font: inherit;
+}
+
+.board-login-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.board-login-button {
+  display: inline-block;
+  border-top: 2px solid #d6b98b;
+  border-left: 2px solid #d6b98b;
+  border-right: 2px solid #2a160e;
+  border-bottom: 2px solid #2a160e;
+  background: linear-gradient(180deg, #6f3f1f 0%, #442615 100%);
+  color: #fff;
+  padding: 0.32rem 0.7rem;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.board-login-button:hover,
+.board-create-account:hover {
+  background: linear-gradient(180deg, #a45a24 0%, #5a3119 100%);
+  color: #fff;
+}
+
+.board-create-account {
+  border-top: 2px solid #d6b98b;
+  border-left: 2px solid #d6b98b;
+  border-right: 2px solid #2a160e;
+  border-bottom: 2px solid #2a160e;
+  background: linear-gradient(180deg, #6f3f1f 0%, #442615 100%);
+  color: #fff;
+  padding: 0.32rem 0.7rem;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.board-index-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.9rem;
+  align-items: start;
+  background: linear-gradient(180deg, rgba(49, 30, 20, 0.94), rgba(20, 12, 8, 0.94));
+}
+
+.thread-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.thread-link:hover {
+  color: var(--neon-yellow);
+}
+
+.thread-excerpt,
+.thread-crumb {
+  color: var(--text-soft);
+}
+
+.thread-crumb a,
+.thread-back-link {
+  color: var(--neon-cyan);
+}
+
+.thread-page-actions,
+.thread-page-thread {
+  background: linear-gradient(180deg, rgba(49, 30, 20, 0.94), rgba(20, 12, 8, 0.94));
+}
+
+.thread-back-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.board-thread {
+  background: linear-gradient(180deg, rgba(49, 30, 20, 0.94), rgba(20, 12, 8, 0.94));
+}
+
+.thread-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 0.8rem;
+  align-items: start;
+  margin-bottom: 0.8rem;
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  list-style: none;
+}
+
+.thread-header::-webkit-details-marker {
+  display: none;
+}
+
+.thread-header:hover h2,
+.thread-header:focus-visible h2 {
+  color: var(--neon-yellow);
+}
+
+.thread-header:focus-visible {
+  outline: 2px dashed rgba(240, 195, 122, 0.8);
+  outline-offset: 4px;
+}
+
+.thread-toggle-badge {
+  align-self: center;
+  justify-self: end;
+  min-width: 72px;
+  padding: 0.26rem 0.5rem;
+  border-top: 2px solid #d6b98b;
+  border-left: 2px solid #d6b98b;
+  border-right: 2px solid #2a160e;
+  border-bottom: 2px solid #2a160e;
+  background: linear-gradient(180deg, #6f3f1f 0%, #442615 100%);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.board-thread:not([open]) .thread-toggle-badge {
+  background: linear-gradient(180deg, #87572f 0%, #4b2d1b 100%);
+}
+
+.board-thread:not([open]) .thread-meta {
+  opacity: 0.88;
+}
+
+.thread-header::before {
+  content: "[-]";
+  align-self: center;
+  color: var(--neon-yellow);
+  font-family: "Arial Black", Impact, sans-serif;
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+}
+
+.board-thread:not([open]) .thread-header::before {
+  content: "[+]";
+}
+
+.thread-header h2 {
+  margin: 0;
+}
+
+.post-list {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.board-post {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0.8rem;
+  border-top: 1px solid rgba(230, 195, 140, 0.25);
+  padding-top: 0.7rem;
+}
+
+.board-post:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.post-author {
+  position: relative;
+  border-top: 2px solid rgba(214, 185, 139, 0.8);
+  border-left: 2px solid rgba(214, 185, 139, 0.8);
+  border-right: 2px solid rgba(42, 22, 14, 0.85);
+  border-bottom: 2px solid rgba(42, 22, 14, 0.85);
+  background: rgba(0, 0, 0, 0.14);
+  padding: 0.6rem;
+}
+
+.post-avatar {
+  position: relative;
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 0.55rem;
+  border-top: 2px solid rgba(245, 222, 181, 0.95);
+  border-left: 2px solid rgba(245, 222, 181, 0.95);
+  border-right: 2px solid rgba(42, 22, 14, 0.85);
+  border-bottom: 2px solid rgba(42, 22, 14, 0.85);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 0 2px rgba(75, 44, 25, 0.55);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.post-avatar::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 11px;
+  width: 42px;
+  height: 42px;
+  margin-left: -21px;
+  border-radius: 50% 50% 42% 42%;
+  background: linear-gradient(180deg, rgba(254, 223, 190, 0.98), rgba(213, 158, 122, 0.98));
+  box-shadow: 0 24px 0 8px rgba(29, 16, 10, 0.24);
+}
+
+.post-avatar::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  width: 52px;
+  height: 30px;
+  margin-left: -26px;
+  border-radius: 55% 55% 45% 45%;
+  background: rgba(37, 19, 11, 0.8);
+}
+
+.avatar-pubjudge {
+  background-image: url("assets/images/founders.jpg");
+  background-position: 18% 24%;
+  background-size: 220%;
+}
+
+.avatar-stacked {
+  background-image: url("assets/images/governing-council-board.png");
+  background-position: 34% 26%;
+  background-size: 210%;
+}
+
+.avatar-dent {
+  background-image: url("assets/images/usa-chapter-history.jpeg");
+  background-position: 62% 20%;
+  background-size: 250%;
+}
+
+.avatar-cosmic {
+  background-image: url("assets/images/trivia-explorers-show.jpeg");
+  background-position: 22% 24%;
+  background-size: 215%;
+}
+
+.avatar-bellringer {
+  background-image: url("assets/images/governing-council-board.png");
+  background-position: 56% 24%;
+  background-size: 210%;
+}
+
+.avatar-northtable {
+  background-image: url("assets/images/trivia-explorers-show.jpeg");
+  background-position: 76% 24%;
+  background-size: 215%;
+}
+
+.avatar-redpen {
+  background-image: url("assets/images/founders.jpg");
+  background-position: 46% 22%;
+  background-size: 220%;
+}
+
+.avatar-fretboard {
+  background-image: url("assets/images/usa-chapter-history.jpeg");
+  background-position: 24% 18%;
+  background-size: 250%;
+}
+
+.avatar-quizmistress {
+  background-image: url("assets/images/governing-council-board.png");
+  background-position: 80% 22%;
+  background-size: 205%;
+}
+
+.avatar-bracket {
+  background-image: url("assets/images/trivia-explorers-show.jpeg");
+  background-position: 48% 24%;
+  background-size: 215%;
+}
+
+.avatar-archivist {
+  background-image: url("assets/images/founders.jpg");
+  background-position: 74% 22%;
+  background-size: 220%;
+}
+
+.avatar-sidepot {
+  background-image: url("assets/images/logo.png");
+  background-position: center;
+  background-size: 86%;
+  background-color: #22140d;
+}
+
+.avatar-candle {
+  background-image: url("assets/images/hootlet-kidz-mascot.png");
+  background-position: center 36%;
+  background-size: 92%;
+  background-color: #482616;
+}
+
+.avatar-velvet {
+  background-image: url("assets/images/hootlet-meet-card.png");
+  background-position: center 34%;
+  background-size: 98%;
+  background-color: #3a1f13;
+}
+
+.avatar-signal {
+  background-image: url("assets/images/logo.png");
+  background-position: center;
+  background-size: 82%;
+  background-color: #1f140e;
+}
+
+.avatar-pubjudge::before,
+.avatar-pubjudge::after,
+.avatar-stacked::before,
+.avatar-stacked::after,
+.avatar-dent::before,
+.avatar-dent::after,
+.avatar-cosmic::before,
+.avatar-cosmic::after,
+.avatar-bellringer::before,
+.avatar-bellringer::after,
+.avatar-northtable::before,
+.avatar-northtable::after,
+.avatar-redpen::before,
+.avatar-redpen::after,
+.avatar-fretboard::before,
+.avatar-fretboard::after,
+.avatar-quizmistress::before,
+.avatar-quizmistress::after,
+.avatar-bracket::before,
+.avatar-bracket::after,
+.avatar-archivist::before,
+.avatar-archivist::after,
+.avatar-sidepot::before,
+.avatar-sidepot::after,
+.avatar-candle::before,
+.avatar-candle::after,
+.avatar-velvet::before,
+.avatar-velvet::after,
+.avatar-signal::before,
+.avatar-signal::after {
+  content: none;
+}
+
+.post-author strong {
+  display: block;
+  margin-bottom: 0.2rem;
+  text-align: center;
+}
+
+.post-author span:last-child {
+  display: block;
+  text-align: center;
+}
+
+.post-body {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.1rem 0;
+}
+
+.post-body p:last-child {
+  margin-bottom: 0;
+}
+
 .quote {
   border-left: 4px solid var(--neon-pink);
   padding-left: 0.7rem;
@@ -1078,6 +1534,30 @@ h3 {
 
   .hero-image-panel img {
     min-height: 220px;
+  }
+
+  .board-intro,
+  .board-post,
+  .board-index-row,
+  .board-login-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .thread-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .thread-header::before {
+    order: 3;
+    justify-self: end;
+  }
+
+  .thread-meta {
+    grid-column: 1 / -1;
+  }
+
+  .thread-toggle-badge {
+    min-width: 64px;
   }
 
   .action-list {
