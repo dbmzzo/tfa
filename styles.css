@@ -1042,6 +1042,7 @@ body.board-page .thread-toggle-badge:hover {
 }
 
 .post-author {
+  min-width: 0;
   position: relative;
   border-top: 2px solid rgba(214, 185, 139, 0.8);
   border-left: 2px solid rgba(214, 185, 139, 0.8);
@@ -1225,11 +1226,15 @@ body.board-page .thread-toggle-badge:hover {
   display: block;
   margin-bottom: 0.2rem;
   text-align: center;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .post-author span:last-child {
   display: block;
   text-align: center;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .post-body {
