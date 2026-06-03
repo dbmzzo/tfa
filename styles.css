@@ -1283,6 +1283,26 @@ body.board-page .board-thread {
     linear-gradient(180deg, rgba(14, 41, 89, 0.97), rgba(5, 12, 25, 0.98));
 }
 
+body.board-page .board-inline-figure {
+  margin: 0.9rem 0 1rem;
+}
+
+body.board-page .board-inline-image {
+  display: block;
+  width: min(100%, 720px);
+  border-top: 2px solid rgba(149, 213, 255, 0.86);
+  border-left: 2px solid rgba(149, 213, 255, 0.86);
+  border-right: 2px solid rgba(6, 14, 28, 0.92);
+  border-bottom: 2px solid rgba(6, 14, 28, 0.92);
+  box-shadow: 0 0 0 1px rgba(18, 80, 178, 0.28), 0 0 18px rgba(10, 80, 210, 0.16);
+}
+
+body.board-page .board-inline-figure figcaption {
+  margin-top: 0.45rem;
+  color: #c9ddf5;
+  font-size: 0.82rem;
+}
+
 body.board-page .thread-link {
   color: #eef7ff;
 }
