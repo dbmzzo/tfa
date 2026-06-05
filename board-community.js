@@ -23,14 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  function renderEmptyState() {
-    if (!liveList) {
-      return;
-    }
-    liveList.innerHTML =
-      '<article class="card board-live-empty"><p>No member-created threads yet. Be the first to start one.</p></article>';
-  }
-
   function renderThread(thread) {
     var article = document.createElement("article");
     article.className = "card board-index-row";
@@ -61,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .then(function (response) { return response.json(); })
       .then(function (payload) {
         if (!payload.ok) {
-          renderEmptyState();
+          liveList.innerHTML = "";
           return;
         }
 
@@ -70,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
         liveList.innerHTML = "";
         if (!payload.threads.length) {
-          renderEmptyState();
           return;
         }
 
@@ -79,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       })
       .catch(function () {
-        renderEmptyState();
+        liveList.innerHTML = "";
       });
   }
 

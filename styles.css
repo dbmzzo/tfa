@@ -900,10 +900,6 @@ body.board-page .thread-toggle-badge:hover {
   white-space: nowrap;
 }
 
-.board-live-empty {
-  background: linear-gradient(180deg, rgba(49, 30, 20, 0.88), rgba(20, 12, 8, 0.9));
-}
-
 .board-live-list {
   display: grid;
   gap: 0.8rem;
