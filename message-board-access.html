@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>TFA Message Board Access Notice</title>
-  <meta name="description" content="Access notice for the TFA message board.">
+  <title>Create TFA Message Board Account</title>
+  <meta name="description" content="Create a real account for the TFA message board.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="board-page">
@@ -28,29 +28,33 @@
 
   <main>
     <section class="page-title">
-      <p class="thread-crumb"><a href="message-board.html">Message Board</a> / Access Notice</p>
-      <h1>Message Board Access</h1>
-      <p class="lead">Account creation for the message board is currently restricted.</p>
+      <p class="thread-crumb"><a href="message-board.html">Message Board</a> / Create Account</p>
+      <h1>Create Message Board Account</h1>
+      <p class="lead">Register a real account to sign in across the board, keep your handle, and unlock member actions.</p>
     </section>
 
     <section class="section">
-      <article class="card board-intro">
+      <article class="card board-login-panel board-register-panel">
         <div>
-          <p class="board-kicker">Access Status</p>
-          <h2>Board Capacity Reached</h2>
-          <p>This message board is currently at capacity. New access to this message board is limited to those that are TFA Certified Trivia Administrators. If you are a Trivia Fairness Association Certified Trivia Administrator use the login information you were given to activate your account.</p>
+          <p class="board-kicker">Account Setup</p>
+          <h2>Choose Your Username</h2>
+          <p class="thread-excerpt">Usernames are unique across the message board. Passwords are stored securely with server-side hashing.</p>
         </div>
-        <div class="board-stats">
-          <p><strong>Status:</strong> Limited access</p>
-          <p><strong>Eligibility:</strong> TFA Certified Trivia Administrators</p>
-          <p><strong>Next Step:</strong> Use your provided activation credentials</p>
-        </div>
-      </article>
-    </section>
+        <form class="board-login-form board-register-form" action="#" method="post" novalidate>
+          <label for="register-username">Username</label>
+          <input id="register-username" name="username" type="text" placeholder="ArchiveOwl88" autocomplete="username" required>
 
-    <section class="section">
-      <article class="card thread-page-actions">
-        <a class="thread-back-link" href="message-board.html">Back to Message Board</a>
+          <label for="register-password">Password</label>
+          <input id="register-password" name="password" type="password" placeholder="Choose a password" autocomplete="new-password" required>
+
+          <label for="register-confirm-password">Confirm Password</label>
+          <input id="register-confirm-password" name="confirm_password" type="password" placeholder="Re-enter your password" autocomplete="new-password" required>
+
+          <div class="board-login-actions">
+            <button class="board-login-button" type="submit">Create Account</button>
+            <a class="thread-back-link board-create-account" href="message-board.html">Back to Message Board</a>
+          </div>
+        </form>
       </article>
     </section>
   </main>
@@ -58,8 +62,9 @@
   <footer class="footer">
     <div class="footer-inner">
       <p><strong>TFA</strong> | Community Archives and Trivia Governance Discussion</p>
-      <p class="small">Administrator onboarding credentials are distributed separately through TFA certification channels.</p>
+      <p class="small">Accounts are stored in the site database and stay available across browser sessions.</p>
     </div>
   </footer>
+  <script src="board-auth.js"></script>
 </body>
 </html>

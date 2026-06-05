@@ -47,12 +47,12 @@
           <h2>Log In To The Message Board</h2>
           <p class="thread-excerpt">Sign in to reply, bookmark investigations, and join live disputes about scoring, question quality, and TFA lore.</p>
         </div>
-        <form class="board-login-form" action="#" method="post">
+        <form class="board-login-form" action="#" method="post" novalidate>
           <label for="board-username">Username</label>
-          <input id="board-username" name="username" type="text" placeholder="QuizHandle77">
+          <input id="board-username" name="username" type="text" placeholder="QuizHandle77" autocomplete="username" required>
 
           <label for="board-password">Password</label>
-          <input id="board-password" name="password" type="password" placeholder="Enter your password">
+          <input id="board-password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
 
           <div class="board-login-actions">
             <button class="board-login-button" type="submit">Log In</button>
@@ -73,11 +73,41 @@
           <p>Use this board to discuss rulings, question challenges, event operations, and TFA history. Posts reflect community opinion and archival rumor, not official TFA findings.</p>
         </div>
         <div class="board-stats">
-          <p><strong>Open Threads:</strong> 16</p>
+          <p><strong>Open Threads:</strong> <span class="board-stats-open-threads" data-base-open-threads="16">16</span></p>
           <p><strong>Active Participants:</strong> 78</p>
           <p><strong>Latest Reply:</strong> 2:34 AM by Moderator</p>
         </div>
       </article>
+    </section>
+
+    <section class="section">
+      <article class="card board-live-panel">
+        <div>
+          <p class="board-kicker">Live Community Threads</p>
+          <h2>Start A New Discussion</h2>
+          <p class="thread-excerpt">These member-created threads are powered by the new real account system. Sign in to open one, then use replies and hoots like a real forum.</p>
+        </div>
+        <p class="board-community-login-note board-thread-composer-notice">Sign in or create an account to start a live thread.</p>
+        <form class="board-thread-composer" id="board-thread-composer" hidden>
+          <label for="composer-title">Thread Title</label>
+          <input id="composer-title" name="title" type="text" placeholder="Ask the board a new question" required>
+
+          <label for="composer-category">Category</label>
+          <input id="composer-category" name="category" type="text" placeholder="Rules Debate" required>
+
+          <label for="composer-body">Opening Post</label>
+          <textarea id="composer-body" name="body" rows="7" placeholder="Write the opening message for your new thread..." required></textarea>
+
+          <div class="board-login-actions">
+            <button class="board-login-button" type="submit">Post Thread</button>
+          </div>
+          <p class="board-auth-status board-thread-composer-status"></p>
+        </form>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="board-live-list"></div>
     </section>
 
     <section class="section board-index">
@@ -234,5 +264,7 @@
       <p class="small">Historical rumor threads are preserved as posted and do not constitute verified TFA history.</p>
     </div>
   </footer>
+  <script src="board-auth.js"></script>
+  <script src="board-community.js"></script>
 </body>
 </html>

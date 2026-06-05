@@ -875,6 +875,63 @@ body.board-page .thread-toggle-badge:hover {
   display: inline-block;
 }
 
+.board-user-panel,
+.board-register-panel {
+  align-self: stretch;
+}
+
+.board-live-panel {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.board-live-empty {
+  background: linear-gradient(180deg, rgba(49, 30, 20, 0.88), rgba(20, 12, 8, 0.9));
+}
+
+.board-live-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.board-thread-composer {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.board-thread-composer textarea,
+.board-reply-form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border-top: 2px solid #d6b98b;
+  border-left: 2px solid #d6b98b;
+  border-right: 2px solid #2a160e;
+  border-bottom: 2px solid #2a160e;
+  background: #f5ead8;
+  color: #24150d;
+  font: inherit;
+  resize: vertical;
+}
+
+.board-community-replies {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(141, 208, 255, 0.24);
+  padding-top: 1rem;
+}
+
+.board-community-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.board-community-heading h2 {
+  margin-bottom: 0.25rem;
+}
+
+.board-community-login-note {
+  color: #c9ddf5;
+}
+
 .board-login-button {
   display: inline-block;
   border-top: 2px solid #d6b98b;
@@ -909,6 +966,20 @@ body.board-page .thread-toggle-badge:hover {
   font-size: 0.76rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.board-auth-status {
+  margin: 0.35rem 0 0;
+  font-size: 0.82rem;
+  color: #c9ddf5;
+}
+
+.board-auth-status.is-error {
+  color: #ff9fb1;
+}
+
+.board-auth-status.is-success {
+  color: #8dffcb;
 }
 
 .board-index-row {
@@ -1271,6 +1342,24 @@ body.board-page .board-login-panel {
     linear-gradient(180deg, rgba(17, 63, 126, 0.98), rgba(6, 16, 35, 0.98));
 }
 
+body.board-page .board-live-panel {
+  background:
+    linear-gradient(135deg, rgba(255, 32, 74, 0.08), transparent 32%),
+    linear-gradient(180deg, rgba(15, 49, 101, 0.97), rgba(5, 12, 25, 0.98));
+  border-top-color: rgba(151, 214, 255, 0.92);
+  border-left-color: rgba(151, 214, 255, 0.92);
+  border-right-color: rgba(4, 10, 20, 0.95);
+  border-bottom-color: rgba(4, 10, 20, 0.95);
+  box-shadow: 0 0 0 1px rgba(18, 80, 178, 0.28), 0 0 22px rgba(10, 80, 210, 0.16);
+}
+
+body.board-page .board-user-panel {
+  grid-column: 1 / -1;
+  margin-top: 0.4rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid rgba(141, 208, 255, 0.24);
+}
+
 body.board-page .board-stats,
 body.board-page .post-author {
   border-top-color: rgba(149, 213, 255, 0.86);
@@ -1384,6 +1473,10 @@ body.board-page .post-vote-button {
 
 body.board-page .post-vote-button:hover {
   background: linear-gradient(180deg, #ff3a58 0%, #177eff 52%, #00c56d 100%);
+}
+
+body.board-page .post-vote-button.is-selected {
+  background: linear-gradient(180deg, #00c56d 0%, #0a234f 100%);
 }
 
 body.board-page .post-reply-button {

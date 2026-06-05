@@ -1,35 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var posts = document.querySelectorAll(".board-post");
-  if (!posts.length) {
+  if (!window.location.pathname.endsWith("thread-live.html")) {
     return;
   }
 
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get("slug");
+  var titleNode = document.querySelector(".live-thread-title");
+  var metaNode = document.querySelector(".live-thread-meta");
+  var categoryNode = document.querySelector(".live-thread-category");
+  var listNode = document.querySelector(".live-thread-post-list");
   var authState = { authenticated: false, user: null };
-  var threadKey = "static:" + window.location.pathname.split("/").pop();
   var replyForm;
   var replyTextarea;
   var replyStatus;
-  var repliesList;
-
-  function fetchJson(url, options) {
-    return fetch(url, options).then(function (response) {
-      return response.json().then(function (data) {
-        return { response: response, data: data };
-      });
-    });
-  }
-
-  function escapeHtml(value) {
-    return String(value)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;");
-  }
-
-  function formatBody(body) {
-    return escapeHtml(body).replace(/\n/g, "<br>");
-  }
 
   function createModal() {
     var modal = document.createElement("div");
@@ -51,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggle(show) {
       modal.hidden = !show;
       modal.style.display = show ? "grid" : "none";
-      modal.setAttribute("aria-hidden", show ? "false" : "true");
       document.body.classList.toggle("board-modal-open", show);
     }
     modal.addEventListener("click", function (event) {
@@ -63,9 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
     if (dialog) {
-      dialog.addEventListener("click", function (event) {
-        event.stopPropagation();
-      });
+      dialog.addEventListener("click", function (event) { event.stopPropagation(); });
     }
     document.addEventListener("keydown", function (event) {
       if (event.key === "Escape" && !modal.hidden) {
@@ -77,11 +57,24 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var modal = createModal();
 
-  function baseCounts(index) {
-    return {
-      up: ((index * 17 + 23) % 87) + 3,
-      down: (index * 7 + 5) % 15
-    };
+  function escapeHtml(value) {
+    return value
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function formatBody(body) {
+    return escapeHtml(body).replace(/\n/g, "<br>");
+  }
+
+  function fetchJson(url, options) {
+    return fetch(url, options).then(function (response) {
+      return response.json().then(function (data) {
+        return { response: response, data: data };
+      });
+    });
   }
 
   function createVoteBar(postKey, baseUp, baseDown) {
@@ -90,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
     voteBar.dataset.postKey = postKey;
     voteBar.dataset.baseUp = String(baseUp || 0);
     voteBar.dataset.baseDown = String(baseDown || 0);
-    voteBar.dataset.userVote = "0";
 
     var upButton = document.createElement("button");
     upButton.type = "button";
@@ -107,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
     replyButton.className = "post-vote-button post-reply-button";
     replyButton.innerHTML = '<span class="post-vote-label">Reply</span>';
 
-    function castVote(value) {
+    function castVote(button, value) {
       if (!authState.authenticated) {
         modal.show();
         return;
@@ -128,8 +120,8 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    upButton.addEventListener("click", function () { castVote(1); });
-    downButton.addEventListener("click", function () { castVote(-1); });
+    upButton.addEventListener("click", function () { castVote(upButton, 1); });
+    downButton.addEventListener("click", function () { castVote(downButton, -1); });
     replyButton.addEventListener("click", function () {
       if (!authState.authenticated) {
         modal.show();
@@ -166,6 +158,16 @@ document.addEventListener("DOMContentLoaded", function () {
     downButton.classList.toggle("is-selected", state.user_vote === -1);
   }
 
+  function renderPost(author, subtitle, body, postKey, baseUp, baseDown) {
+    var article = document.createElement("article");
+    article.className = "board-post";
+    article.innerHTML =
+      '<div class="post-author"><span class="post-avatar avatar-sidepot" aria-hidden="true"></span><strong>' + author + '</strong><span>' + subtitle + '</span></div>' +
+      '<div class="post-body"><p>' + formatBody(body) + '</p></div>';
+    article.querySelector(".post-body").appendChild(createVoteBar(postKey, baseUp, baseDown));
+    return article;
+  }
+
   function refreshVoteStates() {
     var bars = Array.prototype.slice.call(document.querySelectorAll(".post-votes[data-post-key]"));
     if (!bars.length) {
@@ -185,52 +187,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  posts.forEach(function (post, index) {
-    var body = post.querySelector(".post-body");
-    if (!body) {
-      return;
-    }
-    var counts = baseCounts(index);
-    var postKey = threadKey + ":post:" + index;
-    post.dataset.postKey = postKey;
-    body.appendChild(createVoteBar(postKey, counts.up, counts.down));
-  });
-
-  function renderReply(reply) {
-    var article = document.createElement("article");
-    article.className = "board-post";
-    article.innerHTML =
-      '<div class="post-author"><span class="post-avatar avatar-sidepot" aria-hidden="true"></span><strong>' + escapeHtml(reply.author) + '</strong><span>Community member</span></div>' +
-      '<div class="post-body"><p>' + formatBody(reply.body) + '</p></div>';
-    article.querySelector(".post-body").appendChild(createVoteBar(reply.post_key, 0, 0));
-    return article;
-  }
-
-  function renderReplySection() {
-    var threadPage = document.querySelector(".thread-page-thread");
-    if (!threadPage) {
-      return;
-    }
-
+  function renderReplySection(threadKey) {
     var wrapper = document.createElement("div");
     wrapper.className = "board-community-replies";
     wrapper.innerHTML =
-      '<div class="board-community-heading"><h2>Community Replies</h2><p class="thread-excerpt">Signed-in members can continue the discussion below.</p></div>' +
+      '<div class="board-community-heading"><h2>Community Replies</h2><p class="thread-excerpt">New member replies posted with real accounts appear here.</p></div>' +
       '<div class="board-community-list"></div>' +
-      '<p class="board-community-login-note">Sign in on the message board to post a reply.</p>' +
+      '<div class="board-community-login-note">Sign in on the message board to join this discussion.</div>' +
       '<form class="board-reply-form" hidden>' +
-      '<label for="board-reply-body">Add Reply</label>' +
-      '<textarea id="board-reply-body" name="body" rows="5" placeholder="Write your reply..."></textarea>' +
+      '<label for="live-reply-body">Add Reply</label>' +
+      '<textarea id="live-reply-body" name="body" rows="5" placeholder="Share your take on the thread..."></textarea>' +
       '<div class="board-login-actions"><button class="board-login-button" type="submit">Post Reply</button></div>' +
       '<p class="board-auth-status"></p>' +
       '</form>';
-    threadPage.appendChild(wrapper);
+    listNode.appendChild(wrapper);
 
-    repliesList = wrapper.querySelector(".board-community-list");
+    var repliesList = wrapper.querySelector(".board-community-list");
+    var loginNote = wrapper.querySelector(".board-community-login-note");
     replyForm = wrapper.querySelector(".board-reply-form");
     replyTextarea = wrapper.querySelector("textarea");
     replyStatus = wrapper.querySelector(".board-auth-status");
-    var loginNote = wrapper.querySelector(".board-community-login-note");
 
     function syncReplyAccess() {
       if (!replyForm || !loginNote) {
@@ -239,6 +215,20 @@ document.addEventListener("DOMContentLoaded", function () {
       replyForm.hidden = !authState.authenticated;
       loginNote.hidden = !!authState.authenticated;
     }
+
+    function appendReply(reply) {
+      repliesList.appendChild(renderPost(reply.author, "Community member", reply.body, reply.post_key, 0, 0));
+      refreshVoteStates();
+    }
+
+    fetchJson("/api/replies?thread_key=" + encodeURIComponent(threadKey), {
+      credentials: "same-origin"
+    }).then(function (result) {
+      if (!result.response.ok) {
+        return;
+      }
+      result.data.replies.forEach(appendReply);
+    });
 
     replyForm.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -258,21 +248,8 @@ document.addEventListener("DOMContentLoaded", function () {
         replyStatus.classList.remove("is-error");
         replyStatus.classList.add("is-success");
         replyTextarea.value = "";
-        repliesList.appendChild(renderReply(result.data.reply));
-        refreshVoteStates();
+        appendReply(result.data.reply);
       });
-    });
-
-    fetchJson("/api/replies?thread_key=" + encodeURIComponent(threadKey), {
-      credentials: "same-origin"
-    }).then(function (result) {
-      if (!result.response.ok) {
-        return;
-      }
-      result.data.replies.forEach(function (reply) {
-        repliesList.appendChild(renderReply(reply));
-      });
-      refreshVoteStates();
     });
 
     document.addEventListener("tfa-auth-ready", function (event) {
@@ -284,11 +261,33 @@ document.addEventListener("DOMContentLoaded", function () {
     syncReplyAccess();
   }
 
+  if (!slug) {
+    titleNode.textContent = "Thread not found";
+    metaNode.textContent = "Missing thread slug.";
+    return;
+  }
+
   document.addEventListener("tfa-auth-ready", function (event) {
     authState = { authenticated: !!event.detail.user, user: event.detail.user };
     refreshVoteStates();
   });
 
-  renderReplySection();
-  refreshVoteStates();
+  fetchJson("/api/thread?slug=" + encodeURIComponent(slug), { credentials: "same-origin" })
+    .then(function (result) {
+      if (!result.response.ok || !result.data.thread) {
+        titleNode.textContent = "Thread not found";
+        metaNode.textContent = "This community thread could not be loaded.";
+        return;
+      }
+
+      var thread = result.data.thread;
+      document.title = "TFA Thread: " + thread.title;
+      titleNode.textContent = thread.title;
+      metaNode.innerHTML = 'Started by <strong>' + thread.author + '</strong> | ' + thread.reply_count + ' replies';
+      categoryNode.textContent = thread.category;
+      listNode.innerHTML = "";
+      listNode.appendChild(renderPost(thread.author, "Thread author", thread.body, thread.root_post_key, 0, 0));
+      renderReplySection(thread.thread_key);
+      refreshVoteStates();
+    });
 });
