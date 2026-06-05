@@ -187,26 +187,26 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  function renderReplySection(threadKey) {
-    var wrapper = document.createElement("div");
-    wrapper.className = "board-community-replies";
-    wrapper.innerHTML =
-      '<div class="board-community-heading"><h2>Community Replies</h2><p class="thread-excerpt">New member replies posted with real accounts appear here.</p></div>' +
-      '<div class="board-community-list"></div>' +
-      '<div class="board-community-login-note">Sign in on the message board to join this discussion.</div>' +
+  function renderReplyComposer(threadKey) {
+    var composer = document.createElement("article");
+    composer.className = "board-post board-post-composer";
+    composer.innerHTML =
+      '<div class="post-author"><span class="post-avatar avatar-sidepot" aria-hidden="true"></span><strong>Join The Thread</strong><span>Signed-in members can reply here</span></div>' +
+      '<div class="post-body">' +
+      '<p class="board-community-login-note">Sign in on the message board to join this discussion.</p>' +
       '<form class="board-reply-form" hidden>' +
       '<label for="live-reply-body">Add Reply</label>' +
       '<textarea id="live-reply-body" name="body" rows="5" placeholder="Share your take on the thread..."></textarea>' +
       '<div class="board-login-actions"><button class="board-login-button" type="submit">Post Reply</button></div>' +
       '<p class="board-auth-status"></p>' +
-      '</form>';
-    listNode.appendChild(wrapper);
+      '</form>' +
+      '</div>';
+    listNode.appendChild(composer);
 
-    var repliesList = wrapper.querySelector(".board-community-list");
-    var loginNote = wrapper.querySelector(".board-community-login-note");
-    replyForm = wrapper.querySelector(".board-reply-form");
-    replyTextarea = wrapper.querySelector("textarea");
-    replyStatus = wrapper.querySelector(".board-auth-status");
+    var loginNote = composer.querySelector(".board-community-login-note");
+    replyForm = composer.querySelector(".board-reply-form");
+    replyTextarea = composer.querySelector("textarea");
+    replyStatus = composer.querySelector(".board-auth-status");
 
     function syncReplyAccess() {
       if (!replyForm || !loginNote) {
@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function appendReply(reply) {
-      repliesList.appendChild(renderPost(reply.author, "Community member", reply.body, reply.post_key, 0, 0));
+      composer.before(renderPost(reply.author, "Community member", reply.body, reply.post_key, 0, 0));
       refreshVoteStates();
     }
 
@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function () {
       categoryNode.textContent = thread.category;
       listNode.innerHTML = "";
       listNode.appendChild(renderPost(thread.author, "Thread author", thread.body, thread.root_post_key, 0, 0));
-      renderReplySection(thread.thread_key);
+      renderReplyComposer(thread.thread_key);
       refreshVoteStates();
     });
 });

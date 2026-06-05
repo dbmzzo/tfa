@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var authState = { authenticated: false, user: null };
   var threadKey = "static:" + window.location.pathname.split("/").pop();
+  var postList = document.querySelector(".post-list");
   var replyForm;
   var replyTextarea;
   var replyStatus;
-  var repliesList;
 
   function fetchJson(url, options) {
     return fetch(url, options).then(function (response) {
@@ -206,31 +206,30 @@ document.addEventListener("DOMContentLoaded", function () {
     return article;
   }
 
-  function renderReplySection() {
-    var threadPage = document.querySelector(".thread-page-thread");
-    if (!threadPage) {
+  function renderReplyComposer() {
+    if (!postList) {
       return;
     }
 
-    var wrapper = document.createElement("div");
-    wrapper.className = "board-community-replies";
-    wrapper.innerHTML =
-      '<div class="board-community-heading"><h2>Community Replies</h2><p class="thread-excerpt">Signed-in members can continue the discussion below.</p></div>' +
-      '<div class="board-community-list"></div>' +
+    var composer = document.createElement("article");
+    composer.className = "board-post board-post-composer";
+    composer.innerHTML =
+      '<div class="post-author"><span class="post-avatar avatar-sidepot" aria-hidden="true"></span><strong>Join The Thread</strong><span>Signed-in members can reply here</span></div>' +
+      '<div class="post-body">' +
       '<p class="board-community-login-note">Sign in on the message board to post a reply.</p>' +
       '<form class="board-reply-form" hidden>' +
       '<label for="board-reply-body">Add Reply</label>' +
       '<textarea id="board-reply-body" name="body" rows="5" placeholder="Write your reply..."></textarea>' +
       '<div class="board-login-actions"><button class="board-login-button" type="submit">Post Reply</button></div>' +
       '<p class="board-auth-status"></p>' +
-      '</form>';
-    threadPage.appendChild(wrapper);
+      '</form>' +
+      '</div>';
+    postList.appendChild(composer);
 
-    repliesList = wrapper.querySelector(".board-community-list");
-    replyForm = wrapper.querySelector(".board-reply-form");
-    replyTextarea = wrapper.querySelector("textarea");
-    replyStatus = wrapper.querySelector(".board-auth-status");
-    var loginNote = wrapper.querySelector(".board-community-login-note");
+    replyForm = composer.querySelector(".board-reply-form");
+    replyTextarea = composer.querySelector("textarea");
+    replyStatus = composer.querySelector(".board-auth-status");
+    var loginNote = composer.querySelector(".board-community-login-note");
 
     function syncReplyAccess() {
       if (!replyForm || !loginNote) {
@@ -258,7 +257,7 @@ document.addEventListener("DOMContentLoaded", function () {
         replyStatus.classList.remove("is-error");
         replyStatus.classList.add("is-success");
         replyTextarea.value = "";
-        repliesList.appendChild(renderReply(result.data.reply));
+        composer.before(renderReply(result.data.reply));
         refreshVoteStates();
       });
     });
@@ -270,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
       }
       result.data.replies.forEach(function (reply) {
-        repliesList.appendChild(renderReply(reply));
+        composer.before(renderReply(reply));
       });
       refreshVoteStates();
     });
@@ -289,6 +288,6 @@ document.addEventListener("DOMContentLoaded", function () {
     refreshVoteStates();
   });
 
-  renderReplySection();
+  renderReplyComposer();
   refreshVoteStates();
 });

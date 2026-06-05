@@ -913,23 +913,12 @@ body.board-page .thread-toggle-badge:hover {
   resize: vertical;
 }
 
-.board-community-replies {
-  margin-top: 1rem;
-  border-top: 1px solid rgba(141, 208, 255, 0.24);
-  padding-top: 1rem;
-}
-
-.board-community-list {
-  display: grid;
-  gap: 0.7rem;
-}
-
-.board-community-heading h2 {
-  margin-bottom: 0.25rem;
-}
-
 .board-community-login-note {
   color: #c9ddf5;
+}
+
+.board-post-composer {
+  margin-top: 0.2rem;
 }
 
 .board-login-button {
