@@ -23,16 +23,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
+  function appendText(parent, tagName, className, text) {
+    var element = document.createElement(tagName);
+    if (className) {
+      element.className = className;
+    }
+    element.textContent = text || "";
+    parent.appendChild(element);
+    return element;
+  }
+
   function renderThread(thread) {
     var article = document.createElement("article");
     article.className = "card board-index-row";
-    article.innerHTML =
-      '<div>' +
-      '<p class="thread-tag">' + thread.category + '</p>' +
-      '<h2><a class="thread-link" href="thread-live.html?slug=' + encodeURIComponent(thread.slug) + '">' + thread.title + '</a></h2>' +
-      '<p class="thread-excerpt">' + thread.excerpt + '</p>' +
-      '</div>' +
-      '<p class="thread-meta">Started by <strong>' + thread.author + '</strong> | ' + thread.reply_count + ' replies</p>';
+
+    var summary = document.createElement("div");
+    appendText(summary, "p", "thread-tag", thread.category);
+
+    var heading = document.createElement("h2");
+    var link = document.createElement("a");
+    link.className = "thread-link";
+    link.href = "thread-live.html?slug=" + encodeURIComponent(thread.slug);
+    link.textContent = thread.title || "";
+    heading.appendChild(link);
+    summary.appendChild(heading);
+
+    appendText(summary, "p", "thread-excerpt", thread.excerpt);
+
+    var meta = document.createElement("p");
+    meta.className = "thread-meta";
+    meta.appendChild(document.createTextNode("Started by "));
+    appendText(meta, "strong", null, thread.author);
+    meta.appendChild(document.createTextNode(" | " + (thread.reply_count || 0) + " replies"));
+
+    article.appendChild(summary);
+    article.appendChild(meta);
     return article;
   }
 

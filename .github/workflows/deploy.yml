@@ -46,6 +46,8 @@ jobs:
           rsync -avz --delete \
             --exclude ".git/" \
             --exclude ".github/" \
+            --exclude "board-data/" \
+            --exclude "__pycache__/" \
             ./ "${DEPLOY_USER}@${DEPLOY_HOST}:/tmp/tfa-site/"
 
       - name: Publish site on server
@@ -54,5 +56,8 @@ jobs:
           set -euo pipefail
           ssh "${DEPLOY_USER}@${DEPLOY_HOST}" '
             mkdir -p "'"${DEPLOY_PATH}"'" &&
-            rsync -av --delete /tmp/tfa-site/ "'"${DEPLOY_PATH}"'/"
+            rsync -av --delete \
+              --exclude "board-data/" \
+              --exclude "__pycache__/" \
+              /tmp/tfa-site/ "'"${DEPLOY_PATH}"'/"
           '

@@ -5,10 +5,10 @@ After=network.target
 [Service]
 Type=simple
 User=www-data
-WorkingDirectory=/var/www/tfa
+WorkingDirectory=/var/www/t-f-a-trivia-fairnes-associationcom.tv
 Environment=PYTHONUNBUFFERED=1
 Environment=PYTHONPYCACHEPREFIX=/tmp/tfa-pycache
-ExecStart=/usr/bin/python3 /var/www/tfa/app.py --host 127.0.0.1 --port 9000
+ExecStart=/usr/bin/python3 /var/www/t-f-a-trivia-fairnes-associationcom.tv/app.py --host 127.0.0.1 --port 9000
 Restart=always
 RestartSec=3
 

@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var modal = createModal();
 
   function escapeHtml(value) {
-    return value
+    return String(value || "")
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
@@ -161,10 +161,34 @@ document.addEventListener("DOMContentLoaded", function () {
   function renderPost(author, subtitle, body, postKey, baseUp, baseDown) {
     var article = document.createElement("article");
     article.className = "board-post";
-    article.innerHTML =
-      '<div class="post-author"><span class="post-avatar avatar-sidepot" aria-hidden="true"></span><strong>' + author + '</strong><span>' + subtitle + '</span></div>' +
-      '<div class="post-body"><p>' + formatBody(body) + '</p></div>';
-    article.querySelector(".post-body").appendChild(createVoteBar(postKey, baseUp, baseDown));
+
+    var authorNode = document.createElement("div");
+    authorNode.className = "post-author";
+
+    var avatar = document.createElement("span");
+    avatar.className = "post-avatar avatar-sidepot";
+    avatar.setAttribute("aria-hidden", "true");
+
+    var name = document.createElement("strong");
+    name.textContent = author || "";
+
+    var subtitleNode = document.createElement("span");
+    subtitleNode.textContent = subtitle || "";
+
+    authorNode.appendChild(avatar);
+    authorNode.appendChild(name);
+    authorNode.appendChild(subtitleNode);
+
+    var bodyNode = document.createElement("div");
+    bodyNode.className = "post-body";
+
+    var bodyParagraph = document.createElement("p");
+    bodyParagraph.innerHTML = formatBody(body);
+    bodyNode.appendChild(bodyParagraph);
+    bodyNode.appendChild(createVoteBar(postKey, baseUp, baseDown));
+
+    article.appendChild(authorNode);
+    article.appendChild(bodyNode);
     return article;
   }
 
