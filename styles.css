@@ -885,6 +885,21 @@ body.board-page .thread-toggle-badge:hover {
   gap: 0.9rem;
 }
 
+.board-account-strip {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.board-account-strip-copy {
+  margin-bottom: 0;
+}
+
+.board-account-strip-link {
+  white-space: nowrap;
+}
+
 .board-live-empty {
   background: linear-gradient(180deg, rgba(49, 30, 20, 0.88), rgba(20, 12, 8, 0.9));
 }
@@ -1335,6 +1350,17 @@ body.board-page .board-live-panel {
   background:
     linear-gradient(135deg, rgba(255, 32, 74, 0.08), transparent 32%),
     linear-gradient(180deg, rgba(15, 49, 101, 0.97), rgba(5, 12, 25, 0.98));
+  border-top-color: rgba(151, 214, 255, 0.92);
+  border-left-color: rgba(151, 214, 255, 0.92);
+  border-right-color: rgba(4, 10, 20, 0.95);
+  border-bottom-color: rgba(4, 10, 20, 0.95);
+  box-shadow: 0 0 0 1px rgba(18, 80, 178, 0.28), 0 0 22px rgba(10, 80, 210, 0.16);
+}
+
+body.board-page .board-account-strip {
+  background:
+    linear-gradient(135deg, rgba(0, 255, 136, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(17, 63, 126, 0.98), rgba(6, 16, 35, 0.98));
   border-top-color: rgba(151, 214, 255, 0.92);
   border-left-color: rgba(151, 214, 255, 0.92);
   border-right-color: rgba(4, 10, 20, 0.95);
@@ -1911,6 +1937,11 @@ body.board-page .board-modal-close {
   .board-index-row,
   .board-login-panel {
     grid-template-columns: 1fr;
+  }
+
+  .board-account-strip {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .thread-header {

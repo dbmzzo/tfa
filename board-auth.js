@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var loginPanel = document.querySelector(".board-login-panel");
   var registerPanel = document.querySelector(".board-register-panel");
   var startThreadButton = document.querySelector(".board-start-thread-button");
+  var accountBar;
 
   function ensureStatusNode(container, className) {
     if (!container) {
@@ -47,6 +48,46 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  function performLogout() {
+    postJson("/api/logout").then(function () {
+      window.location.reload();
+    });
+  }
+
+  function ensureAccountBar(user) {
+    if (loginPanel || registerPanel) {
+      return;
+    }
+
+    if (!accountBar) {
+      var main = document.querySelector("main");
+      if (!main) {
+        return;
+      }
+
+      accountBar = document.createElement("section");
+      accountBar.className = "section board-account-strip-section";
+      accountBar.innerHTML =
+        '<article class="card board-account-strip">' +
+        '<div>' +
+        '<p class="board-kicker">Signed In</p>' +
+        '<p class="thread-excerpt board-account-strip-copy"></p>' +
+        '</div>' +
+        '<div class="board-login-actions">' +
+        '<a class="thread-back-link board-account-strip-link" href="message-board.html">Back to Board</a>' +
+        '<button class="board-login-button board-logout-button" type="button">Log Out</button>' +
+        '</div>' +
+        '</article>';
+      main.insertBefore(accountBar, main.firstChild);
+      accountBar.querySelector(".board-logout-button").addEventListener("click", performLogout);
+    }
+
+    var copy = accountBar.querySelector(".board-account-strip-copy");
+    if (copy) {
+      copy.textContent = "Signed in as " + user.username + ".";
+    }
+  }
+
   function showLoggedInState(user) {
     if (loginForm) {
       loginForm.hidden = true;
@@ -65,12 +106,10 @@ document.addEventListener("DOMContentLoaded", function () {
       loginPanel.appendChild(panel);
 
       var logoutButton = panel.querySelector(".board-logout-button");
-      logoutButton.addEventListener("click", function () {
-        postJson("/api/logout").then(function () {
-          window.location.reload();
-        });
-      });
+      logoutButton.addEventListener("click", performLogout);
     }
+
+    ensureAccountBar(user);
 
     if (startThreadButton) {
       startThreadButton.setAttribute("href", "#board-thread-composer");
@@ -86,6 +125,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (startThreadButton) {
       startThreadButton.dataset.authenticated = "false";
+    }
+    if (accountBar) {
+      accountBar.remove();
+      accountBar = null;
     }
     document.dispatchEvent(new CustomEvent("tfa-auth-ready", { detail: { user: null } }));
   }
