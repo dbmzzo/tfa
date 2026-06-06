@@ -651,10 +651,10 @@ body.home-pride {
   color: #15306b;
   background-color: #ffffff;
   background-image:
-    linear-gradient(90deg, rgba(229, 62, 62, 0.08), rgba(245, 158, 11, 0.08) 16%, rgba(234, 179, 8, 0.08) 32%, rgba(34, 197, 94, 0.08) 48%, rgba(59, 130, 246, 0.08) 64%, rgba(124, 58, 237, 0.08) 80%, rgba(236, 72, 153, 0.08)),
-    radial-gradient(circle at 12% 14%, rgba(236, 72, 153, 0.12) 0 2px, transparent 3px),
-    radial-gradient(circle at 88% 20%, rgba(59, 130, 246, 0.12) 0 2px, transparent 3px),
-    radial-gradient(circle at 68% 78%, rgba(34, 197, 94, 0.12) 0 2px, transparent 3px);
+    linear-gradient(90deg, rgba(239, 68, 68, 0.16), rgba(249, 115, 22, 0.16) 14%, rgba(250, 204, 21, 0.16) 28%, rgba(34, 197, 94, 0.16) 42%, rgba(20, 184, 166, 0.16) 56%, rgba(59, 130, 246, 0.16) 70%, rgba(124, 58, 237, 0.16) 84%, rgba(236, 72, 153, 0.16)),
+    radial-gradient(circle at 12% 14%, rgba(236, 72, 153, 0.22) 0 2px, transparent 3px),
+    radial-gradient(circle at 88% 20%, rgba(59, 130, 246, 0.22) 0 2px, transparent 3px),
+    radial-gradient(circle at 68% 78%, rgba(34, 197, 94, 0.22) 0 2px, transparent 3px);
   background-size: 100% 100%, 180px 180px, 210px 210px, 240px 240px;
 }
 
@@ -667,14 +667,14 @@ body.home-pride a:hover {
 }
 
 body.home-pride .site-header {
-  border-top: 4px solid #ff4d4d;
-  border-left: 4px solid #ffb703;
-  border-right: 4px solid #2563eb;
-  border-bottom: 4px solid #7c3aed;
+  border-top: 4px solid #ff2d55;
+  border-left: 4px solid #ffb300;
+  border-right: 4px solid #0f67ff;
+  border-bottom: 4px solid #8b1dff;
   background:
-    linear-gradient(90deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
-    linear-gradient(90deg, #ef4444, #f59e0b, #eab308, #22c55e, #3b82f6, #7c3aed, #ec4899);
-  box-shadow: 0 10px 24px rgba(31, 41, 55, 0.08);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    linear-gradient(90deg, #ff2d55 0%, #ff7a00 14%, #ffd400 28%, #1dd75f 42%, #00c2a8 56%, #0f67ff 70%, #7a2cff 84%, #ff47b5 100%);
+  box-shadow: 0 12px 28px rgba(255, 71, 181, 0.16);
 }
 
 body.home-pride .brand,
@@ -704,35 +704,35 @@ body.home-pride .nav-links a {
 body.home-pride .nav-links a:hover,
 body.home-pride .nav-links a[aria-current="page"] {
   color: #10285f;
-  background: linear-gradient(90deg, #ffd5e5 0%, #fff3c4 18%, #ecfccb 36%, #dbeafe 58%, #ede9fe 78%, #ffe4f2 100%);
+  background: linear-gradient(90deg, #ffc1d8 0%, #ffe08a 18%, #d9ff9f 36%, #a8fff1 52%, #b6d8ff 68%, #d8c4ff 84%, #ffb7df 100%);
   border-top-color: #ffffff;
   border-left-color: #ffffff;
   border-right-color: #6f7ba5;
   border-bottom-color: #6f7ba5;
-  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.8), 0 0 16px rgba(236, 72, 153, 0.16);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.82), 0 0 18px rgba(255, 71, 181, 0.24);
 }
 
 body.home-pride .hero {
-  border-top-color: #ff6b6b;
-  border-left-color: #ffbe0b;
-  border-right-color: #4f63a8;
-  border-bottom-color: #7c3aed;
+  border-top-color: #ff4f79;
+  border-left-color: #ffc300;
+  border-right-color: #2f7fff;
+  border-bottom-color: #9a32ff;
   background:
-    linear-gradient(135deg, rgba(255, 247, 252, 0.98), rgba(247, 251, 255, 0.98)),
-    linear-gradient(90deg, rgba(239, 68, 68, 0.12), rgba(245, 158, 11, 0.12), rgba(234, 179, 8, 0.12), rgba(34, 197, 94, 0.12), rgba(59, 130, 246, 0.12), rgba(124, 58, 237, 0.12), rgba(236, 72, 153, 0.12));
+    linear-gradient(135deg, rgba(255, 249, 252, 0.96), rgba(247, 251, 255, 0.96)),
+    linear-gradient(90deg, rgba(255, 45, 85, 0.18), rgba(255, 122, 0, 0.18) 14%, rgba(255, 212, 0, 0.18) 28%, rgba(29, 215, 95, 0.18) 42%, rgba(0, 194, 168, 0.18) 56%, rgba(15, 103, 255, 0.18) 70%, rgba(122, 44, 255, 0.18) 84%, rgba(255, 71, 181, 0.18));
 }
 
 body.home-pride .hero::before {
   background:
-    radial-gradient(circle at top left, rgba(255, 214, 228, 0.65), transparent 32%),
-    radial-gradient(circle at top right, rgba(191, 219, 254, 0.55), transparent 34%),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.4));
+    radial-gradient(circle at top left, rgba(255, 158, 204, 0.78), transparent 34%),
+    radial-gradient(circle at top right, rgba(118, 196, 255, 0.72), transparent 36%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.34));
 }
 
 body.home-pride .hero::after {
   background:
-    linear-gradient(90deg, rgba(239, 68, 68, 0.08), rgba(245, 158, 11, 0.08) 16%, rgba(234, 179, 8, 0.08) 32%, rgba(34, 197, 94, 0.08) 48%, rgba(59, 130, 246, 0.08) 64%, rgba(124, 58, 237, 0.08) 80%, rgba(236, 72, 153, 0.08));
-  opacity: 0.85;
+    linear-gradient(90deg, rgba(255, 45, 85, 0.14), rgba(255, 122, 0, 0.14) 14%, rgba(255, 212, 0, 0.14) 28%, rgba(29, 215, 95, 0.14) 42%, rgba(0, 194, 168, 0.14) 56%, rgba(15, 103, 255, 0.14) 70%, rgba(122, 44, 255, 0.14) 84%, rgba(255, 71, 181, 0.14));
+  opacity: 1;
 }
 
 body.home-pride .hero-copy,
@@ -759,7 +759,7 @@ body.home-pride h1 {
 }
 
 body.home-pride .hero-copy h1 {
-  background: linear-gradient(90deg, #ef4444 0%, #f97316 16%, #eab308 32%, #22c55e 48%, #3b82f6 66%, #7c3aed 82%, #ec4899 100%);
+  background: linear-gradient(90deg, #ff174d 0%, #ff7a00 15%, #ffd000 30%, #00c853 46%, #00b8d4 61%, #2962ff 76%, #7c4dff 88%, #ff2da6 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -782,8 +782,8 @@ body.home-pride .hero-copy p {
 body.home-pride .hero-quote {
   margin: 0;
   padding: 0.85rem 1rem;
-  border-left: 4px solid #3b82f6;
-  background: linear-gradient(90deg, rgba(255, 233, 240, 0.82), rgba(235, 245, 255, 0.88));
+  border-left: 4px solid #0f67ff;
+  background: linear-gradient(90deg, rgba(255, 207, 228, 0.94), rgba(214, 238, 255, 0.96));
 }
 
 body.home-pride .hero-quote p {
@@ -798,8 +798,8 @@ body.home-pride .hero-quote p:last-child {
 
 body.home-pride .hero-statement {
   color: #16307a;
-  border: 2px dashed rgba(182, 29, 115, 0.5);
-  background: linear-gradient(90deg, rgba(255, 227, 239, 0.88), rgba(236, 253, 245, 0.88), rgba(219, 234, 254, 0.88));
+  border: 2px dashed rgba(182, 29, 115, 0.72);
+  background: linear-gradient(90deg, rgba(255, 196, 225, 0.96), rgba(255, 236, 163, 0.96) 24%, rgba(212, 255, 176, 0.96) 48%, rgba(182, 240, 255, 0.96) 72%, rgba(223, 210, 255, 0.96) 100%);
 }
 
 body.home-pride .hero-signoff {
@@ -809,7 +809,7 @@ body.home-pride .hero-signoff {
 
 body.home-pride .hero-image-panel {
   background:
-    linear-gradient(135deg, rgba(255, 241, 245, 0.9), rgba(240, 249, 255, 0.9));
+    linear-gradient(135deg, rgba(255, 220, 232, 0.94), rgba(225, 245, 255, 0.94));
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -831,14 +831,14 @@ body.home-pride .card strong {
 
 body.home-pride .quote {
   color: #17306b;
-  border-left: 4px solid #ec4899;
+  border-left: 4px solid #ff2da6;
   padding-left: 0.9rem;
 }
 
 body.home-pride .footer {
-  border-top: 4px solid #ec4899;
+  border-top: 4px solid #ff2da6;
   background:
-    linear-gradient(90deg, rgba(255, 230, 237, 0.92), rgba(255, 248, 220, 0.92) 18%, rgba(240, 253, 244, 0.92) 36%, rgba(239, 246, 255, 0.92) 58%, rgba(245, 243, 255, 0.92) 78%, rgba(255, 237, 246, 0.92));
+    linear-gradient(90deg, rgba(255, 210, 226, 0.96), rgba(255, 232, 152, 0.96) 18%, rgba(214, 255, 176, 0.96) 36%, rgba(190, 240, 255, 0.96) 58%, rgba(223, 210, 255, 0.96) 78%, rgba(255, 209, 236, 0.96));
 }
 
 body.home-pride .footer-inner {
@@ -890,14 +890,14 @@ body.home-pride .footer-inner {
   border-left: 2px solid #ffffff;
   border-right: 2px solid #8a99c0;
   border-bottom: 2px solid #8a99c0;
-  background: linear-gradient(90deg, #ffd5e5 0%, #fff3c4 18%, #ecfccb 36%, #dbeafe 58%, #ede9fe 78%, #ffe4f2 100%);
-  box-shadow: 0 8px 16px rgba(34, 49, 94, 0.08);
+  background: linear-gradient(90deg, #ffbfd9 0%, #ffd88a 18%, #d8ff9f 36%, #9fffee 54%, #b8d4ff 72%, #d8c2ff 86%, #ffb2dd 100%);
+  box-shadow: 0 10px 18px rgba(255, 71, 181, 0.16);
 }
 
 .finder-button:hover,
 .finder-result-link:hover {
   color: #10285f;
-  background: linear-gradient(90deg, #fecdd3 0%, #fde68a 20%, #bbf7d0 40%, #bfdbfe 60%, #ddd6fe 80%, #fbcfe8 100%);
+  background: linear-gradient(90deg, #ff9fc4 0%, #ffc34d 18%, #c4ff6d 36%, #58f5dd 54%, #7cb8ff 72%, #bb91ff 86%, #ff7fc7 100%);
 }
 
 .finder-status,
