@@ -924,6 +924,24 @@ body.home-pride .footer-inner {
   padding: 0.8rem 0.9rem;
 }
 
+.finder-embed-wrap {
+  margin-top: 1rem;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #8a99c0;
+  border-bottom: 3px solid #8a99c0;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.finder-embed {
+  display: block;
+  width: 100%;
+  min-height: 460px;
+  border: 0;
+  background: #ffffff;
+}
+
 .finder-tip-list {
   padding-left: 1.2rem;
 }

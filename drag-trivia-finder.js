@@ -7,8 +7,10 @@ document.addEventListener("DOMContentLoaded", function () {
   var googleLink = document.getElementById("finder-google");
   var mapsLink = document.getElementById("finder-maps");
   var yelpLink = document.getElementById("finder-yelp");
+  var embedWrap = document.getElementById("finder-embed-wrap");
+  var embed = document.getElementById("finder-embed");
 
-  if (!form || !zipInput || !status || !results || !summary || !googleLink || !mapsLink || !yelpLink) {
+  if (!form || !zipInput || !status || !results || !summary || !googleLink || !mapsLink || !yelpLink || !embedWrap || !embed) {
     return;
   }
 
@@ -27,13 +29,16 @@ document.addEventListener("DOMContentLoaded", function () {
     var searchPhrase = "Drag Trivia near " + normalizedZip;
     var encodedSearch = encodeURIComponent(searchPhrase);
     var encodedYelp = encodeURIComponent("Drag Trivia " + normalizedZip);
+    var mapEmbedQuery = encodeURIComponent("drag trivia " + normalizedZip);
 
     googleLink.href = "https://www.google.com/search?q=" + encodedSearch;
     mapsLink.href = "https://www.google.com/maps/search/" + encodedSearch;
     yelpLink.href = "https://www.yelp.com/search?find_desc=" + encodedYelp;
+    embed.src = "https://www.google.com/maps?q=" + mapEmbedQuery + "&output=embed";
 
-    summary.textContent = 'Search results prepared for "' + searchPhrase + '."';
-    status.textContent = "Choose a search option below.";
+    summary.textContent = 'Showing map results for "' + searchPhrase + '" below.';
+    status.textContent = "Your map results are loaded on this page.";
     results.hidden = false;
+    embedWrap.hidden = false;
   });
 });

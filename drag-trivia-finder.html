@@ -58,12 +58,21 @@
     <section class="section">
       <div class="grid finder-grid">
         <article class="card finder-card" id="finder-results" hidden>
-          <h2>Your Search Options</h2>
+          <h2>Your Search Results</h2>
           <p class="finder-summary" id="finder-summary"></p>
           <div class="finder-result-links">
-            <a class="finder-result-link" id="finder-google" href="#" target="_blank" rel="noreferrer noopener">Search Google</a>
-            <a class="finder-result-link" id="finder-maps" href="#" target="_blank" rel="noreferrer noopener">Open Google Maps</a>
-            <a class="finder-result-link" id="finder-yelp" href="#" target="_blank" rel="noreferrer noopener">Search Yelp</a>
+            <a class="finder-result-link" id="finder-google" href="#" rel="noreferrer noopener">Search Google In This Tab</a>
+            <a class="finder-result-link" id="finder-maps" href="#" rel="noreferrer noopener">Open Full Map In This Tab</a>
+            <a class="finder-result-link" id="finder-yelp" href="#" rel="noreferrer noopener">Search Yelp In This Tab</a>
+          </div>
+          <div class="finder-embed-wrap" id="finder-embed-wrap" hidden>
+            <iframe
+              class="finder-embed"
+              id="finder-embed"
+              title="Drag trivia map results"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </article>
 
