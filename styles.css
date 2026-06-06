@@ -797,11 +797,16 @@ body.home-pride .hero-signoff {
 body.home-pride .hero-image-panel {
   background:
     linear-gradient(135deg, rgba(255, 241, 245, 0.9), rgba(240, 249, 255, 0.9));
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 body.home-pride .hero-image-panel img {
-  min-height: 100%;
+  width: min(100%, 560px);
+  min-height: 0;
   object-fit: contain;
+  object-position: top center;
   background: #ffffff;
   padding: 0.8rem;
   filter: none;
