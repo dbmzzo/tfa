@@ -160,6 +160,12 @@ main {
   align-items: stretch;
 }
 
+.hero-side {
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
+}
+
 .hero-copy {
   border-top: 2px solid #e7c794;
   border-left: 2px solid #e7c794;
@@ -774,7 +780,7 @@ body.home-pride .hero-copy p {
 }
 
 body.home-pride .hero-quote {
-  margin: 1rem 0;
+  margin: 0;
   padding: 0.85rem 1rem;
   border-left: 4px solid #3b82f6;
   background: linear-gradient(90deg, rgba(255, 233, 240, 0.82), rgba(235, 245, 255, 0.88));
@@ -2188,6 +2194,14 @@ body.board-page .board-modal-close {
 
   .hero-home-inner {
     grid-template-columns: 1fr;
+  }
+
+  .hero-side {
+    order: 1;
+  }
+
+  .hero-copy {
+    order: 2;
   }
 
   .chapter-history-figure-left {
