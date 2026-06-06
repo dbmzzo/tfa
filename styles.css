@@ -827,6 +827,93 @@ body.home-pride .footer-inner {
   color: #15306b;
 }
 
+.finder-page .finder-hero-inner {
+  grid-template-columns: 1.2fr 0.9fr;
+}
+
+.finder-form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.finder-form label {
+  font-weight: 700;
+  color: #17306b;
+}
+
+.finder-form input {
+  width: 100%;
+  padding: 0.85rem 0.9rem;
+  border: 2px solid #94a3b8;
+  background: #ffffff;
+  color: #17306b;
+  font: inherit;
+}
+
+.finder-form input:focus {
+  outline: 3px solid rgba(236, 72, 153, 0.22);
+  border-color: #ec4899;
+}
+
+.finder-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.finder-button,
+.finder-result-link {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  color: #16307a;
+  border-top: 2px solid #ffffff;
+  border-left: 2px solid #ffffff;
+  border-right: 2px solid #8a99c0;
+  border-bottom: 2px solid #8a99c0;
+  background: linear-gradient(90deg, #ffd5e5 0%, #fff3c4 18%, #ecfccb 36%, #dbeafe 58%, #ede9fe 78%, #ffe4f2 100%);
+  box-shadow: 0 8px 16px rgba(34, 49, 94, 0.08);
+}
+
+.finder-button:hover,
+.finder-result-link:hover {
+  color: #10285f;
+  background: linear-gradient(90deg, #fecdd3 0%, #fde68a 20%, #bbf7d0 40%, #bfdbfe 60%, #ddd6fe 80%, #fbcfe8 100%);
+}
+
+.finder-status,
+.finder-summary {
+  margin: 0;
+  font-weight: 700;
+}
+
+.finder-grid {
+  align-items: stretch;
+}
+
+.finder-card {
+  min-height: 100%;
+}
+
+.finder-result-links {
+  display: grid;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.finder-result-link {
+  padding: 0.8rem 0.9rem;
+}
+
+.finder-tip-list {
+  padding-left: 1.2rem;
+}
+
+.finder-tip-list li {
+  margin-bottom: 0.45rem;
+}
+
 .card strong {
   color: #fff;
 }

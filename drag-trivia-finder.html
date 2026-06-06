@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drag Trivia Finder | Trivia Fairness Association</title>
+  <meta name="description" content="Find drag trivia events near you by entering your ZIP code.">
+  <meta property="og:title" content="Drag Trivia Finder">
+  <meta property="og:description" content="Search for drag trivia in your area using your ZIP code.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://t-f-a-trivia-fairnes-associationcom.tv/drag-trivia-finder.html">
+  <meta property="og:image" content="https://t-f-a-trivia-fairnes-associationcom.tv/assets/images/tfa-pride-fairness.jpeg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="home-pride finder-page">
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="index.html" aria-label="Trivia Fairness Association home">Trivia Fairness Association</a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="faq.html">FAQ</a>
+        <a href="governance.html">Governance</a>
+        <a href="investigations.html">Investigations</a>
+        <a href="message-board.html">Message Board</a>
+        <a href="history.html">History</a>
+        <a href="usa-chapter.html">USA Chapter</a>
+        <a href="tfa-for-kidz.html">TFA for KIDZ!</a>
+        <a href="become-administrator.html">Become a TFA Administrator</a>
+        <a href="application.html">Submit an Appeal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero hero-home finder-hero">
+      <div class="hero-inner hero-home-inner finder-hero-inner">
+        <article class="hero-copy card finder-copy">
+          <p class="hero-kicker">Local Search</p>
+          <h1>Find Drag Trivia Near You</h1>
+          <p class="lead">Enter your ZIP code and we will build quick search links for drag trivia in your area.</p>
+          <form class="finder-form" id="drag-trivia-finder" novalidate>
+            <label for="finder-zip">ZIP Code</label>
+            <input id="finder-zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="97205" maxlength="10" required>
+            <div class="finder-actions">
+              <button class="board-login-button finder-button" type="submit">Search Drag Trivia</button>
+            </div>
+            <p class="finder-status" id="finder-status" aria-live="polite"></p>
+          </form>
+        </article>
+
+        <figure class="hero-image-panel finder-image-panel" aria-label="TFA pride support artwork">
+          <img src="assets/images/tfa-pride-fairness.jpeg" alt="TFA proud to support fairness for all rainbow emblem">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="grid finder-grid">
+        <article class="card finder-card" id="finder-results" hidden>
+          <h2>Your Search Options</h2>
+          <p class="finder-summary" id="finder-summary"></p>
+          <div class="finder-result-links">
+            <a class="finder-result-link" id="finder-google" href="#" target="_blank" rel="noreferrer noopener">Search Google</a>
+            <a class="finder-result-link" id="finder-maps" href="#" target="_blank" rel="noreferrer noopener">Open Google Maps</a>
+            <a class="finder-result-link" id="finder-yelp" href="#" target="_blank" rel="noreferrer noopener">Search Yelp</a>
+          </div>
+        </article>
+
+        <article class="card finder-card">
+          <h2>Search Tips</h2>
+          <ul class="list-clean finder-tip-list">
+            <li>Try nearby ZIP codes if you live near a larger city.</li>
+            <li>Look for terms like "drag bingo," "drag brunch trivia," and "queer trivia night."</li>
+            <li>Venue calendars and local event listings often have the newest dates.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <p><strong>TFA</strong> | Trivia Fairness Association</p>
+      <p class="small">Independent governing body for fair, transparent, and credible competitive trivia.</p>
+    </div>
+  </footer>
+
+  <script src="drag-trivia-finder.js"></script>
+</body>
+</html>
