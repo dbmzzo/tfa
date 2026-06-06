@@ -950,6 +950,57 @@ body.home-pride .footer-inner {
   margin-bottom: 0.45rem;
 }
 
+.finder-byline {
+  margin: 0.35rem 0 0;
+  font-weight: 700;
+}
+
+.finder-feature-card {
+  display: grid;
+  gap: 1rem;
+}
+
+.finder-feature-figure {
+  margin: 0;
+}
+
+.finder-feature-image {
+  display: block;
+  width: 100%;
+  border-top: 3px solid #ffffff;
+  border-left: 3px solid #ffffff;
+  border-right: 3px solid #8a99c0;
+  border-bottom: 3px solid #8a99c0;
+  background: #ffffff;
+}
+
+.finder-feature-copy {
+  max-width: 72ch;
+}
+
+.finder-feature-copy > p:first-child {
+  margin-top: 0;
+}
+
+.finder-inline-quote {
+  margin: 1rem 0;
+}
+
+.finder-feature-callout {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 2px dashed rgba(182, 29, 115, 0.45);
+}
+
+.finder-feature-kicker {
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #c0267a;
+}
+
 .card strong {
   color: #fff;
 }
